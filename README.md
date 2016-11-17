@@ -16,5 +16,5 @@ let url = url({ host: 'markocen.com', path: 'blog' }) // http://markocen.com/blo
 ```javascript
 import { compile } from 'benthos';
 
-let bio = compile('Hello, my name is #{fullName()}, I am from #{city()}');
+let bio = compile('Hello, my name is #{fullName}, I am from #{city}');
 ```
