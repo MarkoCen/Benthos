@@ -1,7 +1,7 @@
 {
   "name": "benthos",
   "version": "0.1.0",
-  "description": "ES6 fake data generator",
+  "description": "ES2015 test data generator",
   "main": "index.js",
   "dependencies": {
     "random-js": "^1.0.8"
@@ -18,13 +18,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarkoCen/benthosjs.git"
+    "url": "git+https://github.com/MarkoCen/Benthos.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["fake", "data", "test"],
+  "author": "Marko Cen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MarkoCen/benthosjs/issues"
+    "url": "https://github.com/MarkoCen/Benthos/issues"
   },
-  "homepage": "https://github.com/MarkoCen/benthosjs#readme"
+  "homepage": "https://github.com/MarkoCen/Benthos#readme"
 }
