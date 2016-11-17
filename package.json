@@ -1,5 +1,5 @@
 {
-  "name": "benthosjs",
+  "name": "benthos",
   "version": "0.1.0",
   "description": "ES6 fake data generator",
   "main": "index.js",
