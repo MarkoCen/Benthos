@@ -4,6 +4,7 @@
   "description": "ES2015 test data generator",
   "main": "index.js",
   "dependencies": {
+    "lodash.foreach": "^4.5.0",
     "random-js": "^1.0.8"
   },
   "devDependencies": {
