@@ -18,3 +18,25 @@ import { compile } from 'benthos';
 
 let bio = compile('Hello, my name is #{fullName}, I am from #{city}');
 ```
+
+### Generate data from schema
+```javascript
+import { schema } from 'benthos';
+
+const ProfileSchema = schema({
+    name: '#{fullName}',
+    age: '#{getAge}',
+    gender: '#{gender(false)}'
+})
+
+// profileData = {
+//    name: 'Micheal Smith',
+//    age: 43,
+//    gender: 'Male'
+//}
+let profileData = ProfileSchema({
+    getAge: function(){
+        return this.integer(25, 65);
+    }
+})
+```
