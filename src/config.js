@@ -5,7 +5,7 @@ import { NO_DATASET_FOUND } from './utilities/errors';
 
 let location = 'en';
 
-export function setLoc(loc) {
+export function locale(loc) {
     if(!datasets[loc]) throw NO_DATASET_FOUND(loc);
     location = loc || 'en';
 }

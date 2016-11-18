@@ -15,3 +15,7 @@ export function NO_FUNCTION_FOUND_IN_TEMPLATE(functionName, template){
 export function NO_LOCATION_FOUND() {
     return new ReferenceError('No location defined for this locale');
 }
+
+export function NO_TEXT_FOUND(){
+    return new ReferenceError('No text defined for this locale');
+}
