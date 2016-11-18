@@ -72,7 +72,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _index = __webpack_require__(11);
+	var _index = __webpack_require__(12);
 	
 	Object.keys(_index).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -84,7 +84,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _compile = __webpack_require__(31);
+	var _compile = __webpack_require__(42);
 	
 	Object.keys(_compile).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -92,6 +92,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    enumerable: true,
 	    get: function get() {
 	      return _compile[key];
+	    }
+	  });
+	});
+	
+	var _schema = __webpack_require__(43);
+	
+	Object.keys(_schema).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _schema[key];
 	    }
 	  });
 	});
@@ -105,20 +117,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.setLoc = setLoc;
+	exports.locale = locale;
 	exports.getDataSet = getDataSet;
 	
 	var _index = __webpack_require__(2);
 	
 	var datasets = _interopRequireWildcard(_index);
 	
-	var _errors = __webpack_require__(10);
+	var _errors = __webpack_require__(11);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	var location = 'en';
 	
-	function setLoc(loc) {
+	function locale(loc) {
 	    if (!datasets[loc]) throw (0, _errors.NO_DATASET_FOUND)(loc);
 	    location = loc || 'en';
 	}
@@ -150,7 +162,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _index2 = __webpack_require__(8);
+	var _index2 = __webpack_require__(9);
 	
 	Object.keys(_index2).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -181,11 +193,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _location_data = __webpack_require__(7);
 	
+	var _text_data = __webpack_require__(8);
+	
 	var en = exports.en = {
 	    gender: _gender_data.gender,
 	    lastNames: _lastNames_data.lastNames,
 	    firstNames: { male: _firstNames_data.male, female: _firstNames_data.female },
-	    location: _location_data.location
+	    location: _location_data.location,
+	    text: _text_data.text
 	};
 
 /***/ },
@@ -242,6 +257,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 8 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var text = exports.text = ["Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Duis", "venenatis", "non", "sapien", "sed", "rhoncus", "Ut", "sagittis", "dictum", "dignissim", "Proin", "iaculis", "egestas", "tortor", "vel", "venenatis", "turpis", "luctus", "sodales", "Praesent", "ullamcorper", "maximus", "arcu", "in", "tincidunt", "Phasellus", "sagittis", "ex", "et", "tincidunt", "interdum", "Pellentesque", "a", "accumsan", "diam", "Maecenas", "nisi", "justo", "laoreet", "non", "velit", "et", "placerat", "molestie", "nisi", "Integer", "consectetur", "pellentesque", "sem", "Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Donec", "ut", "blandit", "dui", "Nunc", "ultricies", "odio", "quis", "varius", "gravida", "felis", "nisi", "vehicula", "elit", "vel", "porttitor", "nibh", "urna", "non", "nulla", "Morbi", "venenatis", "ut", "tortor", "quis", "luctus", "Phasellus", "varius", "odio", "lectus", "ut", "auctor", "lectus", "cursus", "at", "Curabitur", "gravida", "massa", "vel", "orci", "dignissim", "eget", "varius", "elit", "blandit", "In", "ut", "diam", "ante", "Duis", "leo", "dolor", "sollicitudin", "nec", "massa", "vitae", "scelerisque", "venenatis", "velit", "Phasellus", "sit", "amet", "nunc", "condimentum", "condimentum", "purus", "in", "accumsan", "neque", "Vivamus", "condimentum", "arcu", "ex", "sit", "amet", "blandit", "eros", "eleifend", "in", "Vestibulum", "lacinia", "ex", "aliquet", "suscipit", "egestas", "In", "in", "nisl", "nec", "felis", "facilisis", "maximus", "Morbi", "fermentum", "odio", "varius", "finibus", "dui", "sit", "amet", "finibus", "odio", "Morbi", "quis", "purus", "pretium", "bibendum", "lacus", "a", "molestie", "tellus", "Donec", "enim", "nulla", "porttitor", "in", "efficitur", "viverra", "commodo", "feugiat", "ante", "Fusce", "id", "ornare", "risus", "Etiam", "volutpat", "elit", "diam", "vel", "aliquam", "velit", "finibus", "quis", "Cras"];
+
+/***/ },
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -251,14 +277,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.cn = undefined;
 	
-	var _gender_data = __webpack_require__(9);
+	var _gender_data = __webpack_require__(10);
 	
 	var cn = exports.cn = {
 	    gender: _gender_data.gender
 	};
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -272,7 +298,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -284,6 +310,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.INVALID_TEMPLATE = INVALID_TEMPLATE;
 	exports.NO_FUNCTION_FOUND_IN_TEMPLATE = NO_FUNCTION_FOUND_IN_TEMPLATE;
 	exports.NO_LOCATION_FOUND = NO_LOCATION_FOUND;
+	exports.NO_TEXT_FOUND = NO_TEXT_FOUND;
 	function NO_DATASET_FOUND(loc) {
 	    return new ReferenceError('No dataset found for ' + loc);
 	}
@@ -299,9 +326,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	function NO_LOCATION_FOUND() {
 	    return new ReferenceError('No location defined for this locale');
 	}
+	
+	function NO_TEXT_FOUND() {
+	    return new ReferenceError('No text defined for this locale');
+	}
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -310,19 +341,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _gender = __webpack_require__(12);
-	
-	Object.keys(_gender).forEach(function (key) {
-	  if (key === "default" || key === "__esModule") return;
-	  Object.defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _gender[key];
-	    }
-	  });
-	});
-	
-	var _ipv = __webpack_require__(15);
+	var _ipv = __webpack_require__(13);
 	
 	Object.keys(_ipv).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -346,55 +365,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _fullName = __webpack_require__(17);
-	
-	Object.keys(_fullName).forEach(function (key) {
-	  if (key === "default" || key === "__esModule") return;
-	  Object.defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _fullName[key];
-	    }
-	  });
-	});
-	
-	var _firstName = __webpack_require__(18);
-	
-	Object.keys(_firstName).forEach(function (key) {
-	  if (key === "default" || key === "__esModule") return;
-	  Object.defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _firstName[key];
-	    }
-	  });
-	});
-	
-	var _lastName = __webpack_require__(19);
-	
-	Object.keys(_lastName).forEach(function (key) {
-	  if (key === "default" || key === "__esModule") return;
-	  Object.defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _lastName[key];
-	    }
-	  });
-	});
-	
-	var _string = __webpack_require__(20);
-	
-	Object.keys(_string).forEach(function (key) {
-	  if (key === "default" || key === "__esModule") return;
-	  Object.defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _string[key];
-	    }
-	  });
-	});
-	
-	var _email = __webpack_require__(21);
+	var _email = __webpack_require__(17);
 	
 	Object.keys(_email).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -406,7 +377,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _url = __webpack_require__(23);
+	var _url = __webpack_require__(20);
 	
 	Object.keys(_url).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -418,7 +389,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _integer = __webpack_require__(24);
+	var _string = __webpack_require__(18);
+	
+	Object.keys(_string).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _string[key];
+	    }
+	  });
+	});
+	
+	var _integer = __webpack_require__(21);
 	
 	Object.keys(_integer).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -430,7 +413,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _float = __webpack_require__(26);
+	var _float = __webpack_require__(23);
 	
 	Object.keys(_float).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -442,7 +425,103 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _phone = __webpack_require__(27);
+	var _boolean = __webpack_require__(24);
+	
+	Object.keys(_boolean).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _boolean[key];
+	    }
+	  });
+	});
+	
+	var _uuid = __webpack_require__(25);
+	
+	Object.keys(_uuid).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _uuid[key];
+	    }
+	  });
+	});
+	
+	var _hash = __webpack_require__(26);
+	
+	Object.keys(_hash).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _hash[key];
+	    }
+	  });
+	});
+	
+	var _md = __webpack_require__(27);
+	
+	Object.keys(_md).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _md[key];
+	    }
+	  });
+	});
+	
+	var _fullName = __webpack_require__(28);
+	
+	Object.keys(_fullName).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _fullName[key];
+	    }
+	  });
+	});
+	
+	var _firstName = __webpack_require__(29);
+	
+	Object.keys(_firstName).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _firstName[key];
+	    }
+	  });
+	});
+	
+	var _lastName = __webpack_require__(30);
+	
+	Object.keys(_lastName).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _lastName[key];
+	    }
+	  });
+	});
+	
+	var _gender = __webpack_require__(31);
+	
+	Object.keys(_gender).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _gender[key];
+	    }
+	  });
+	});
+	
+	var _phone = __webpack_require__(32);
 	
 	Object.keys(_phone).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -454,7 +533,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _street = __webpack_require__(28);
+	var _street = __webpack_require__(33);
 	
 	Object.keys(_street).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -466,7 +545,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _country = __webpack_require__(29);
+	var _country = __webpack_require__(34);
 	
 	Object.keys(_country).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -478,7 +557,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _address = __webpack_require__(30);
+	var _address = __webpack_require__(35);
 	
 	Object.keys(_address).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -489,9 +568,57 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  });
 	});
+	
+	var _identicon = __webpack_require__(36);
+	
+	Object.keys(_identicon).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _identicon[key];
+	    }
+	  });
+	});
+	
+	var _date = __webpack_require__(39);
+	
+	Object.keys(_date).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _date[key];
+	    }
+	  });
+	});
+	
+	var _dateIn = __webpack_require__(40);
+	
+	Object.keys(_dateIn).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _dateIn[key];
+	    }
+	  });
+	});
+	
+	var _color = __webpack_require__(41);
+	
+	Object.keys(_color).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _color[key];
+	    }
+	  });
+	});
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -499,23 +626,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.gender = gender;
+	exports.ipv4 = ipv4;
 	
-	var _config = __webpack_require__(1);
+	var _random = __webpack_require__(14);
 	
-	var _random = __webpack_require__(13);
-	
-	var GENDER = [0, // female
-	1 // male
-	];
-	
-	function gender(isNum) {
-	    var g = (0, _random.pick)(GENDER);
-	    if (isNum) return g;else return (0, _config.getDataSet)().gender[g];
+	function ipv4() {
+	    return (0, _random.number)(0, 255) + '.' + (0, _random.number)(0, 255) + '.' + (0, _random.number)(0, 255) + '.' + (0, _random.number)(0, 255);
 	}
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -528,7 +648,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.number = number;
 	exports.substring = substring;
 	
-	var _randomJs = __webpack_require__(14);
+	var _randomJs = __webpack_require__(15);
 	
 	var Random = _interopRequireWildcard(_randomJs);
 	
@@ -553,7 +673,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*jshint eqnull:true*/
@@ -1274,23 +1394,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	}(this));
 
 /***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.ipv4 = ipv4;
-	
-	var _random = __webpack_require__(13);
-	
-	function ipv4() {
-	    return (0, _random.number)(0, 255) + '.' + (0, _random.number)(0, 255) + '.' + (0, _random.number)(0, 255) + '.' + (0, _random.number)(0, 255);
-	}
-
-/***/ },
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1301,7 +1404,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.ipv6 = ipv6;
 	
-	var _random = __webpack_require__(13);
+	var _random = __webpack_require__(14);
 	
 	function ipv6() {
 	    var count = 7;
@@ -1322,14 +1425,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.fullName = fullName;
+	exports.email = email;
 	
-	var _firstName = __webpack_require__(18);
+	var _string = __webpack_require__(18);
 	
-	var _lastName = __webpack_require__(19);
+	var _domain = __webpack_require__(19);
 	
-	function fullName(gender) {
-	    return (0, _firstName.firstName)(gender) + ' ' + (0, _lastName.lastName)();
+	function email(d) {
+	    return (0, _string.string)(10) + '@' + (d ? d : (0, _domain.domain)());
 	}
 
 /***/ },
@@ -1341,51 +1444,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.firstName = firstName;
-	
-	var _config = __webpack_require__(1);
-	
-	var _random = __webpack_require__(13);
-	
-	function firstName(gender) {
-	    var dataset = (0, _config.getDataSet)();
-	    var names = gender === undefined ? dataset.firstNames.male.concat(dataset.firstNames.female) : gender === 0 || gender === 'female' ? dataset.firstNames.female : dataset.firstNames.male;
-	
-	    return (0, _random.pick)(names);
-	}
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.lastName = lastName;
-	
-	var _config = __webpack_require__(1);
-	
-	var _random = __webpack_require__(13);
-	
-	function lastName() {
-	    var dataset = (0, _config.getDataSet)();
-	    return (0, _random.pick)(dataset.lastNames);
-	}
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 	exports.string = string;
 	
-	var _random = __webpack_require__(13);
+	var _random = __webpack_require__(14);
 	
 	var DEFAULT_STRING_POOL = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+|~-=\\`[]{};\':",./<>?';
 	var DEFAULT_FILTER = /[a-zA-Z0-9]/g;
@@ -1410,26 +1471,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.email = email;
-	
-	var _string = __webpack_require__(20);
-	
-	var _domain = __webpack_require__(22);
-	
-	function email(d) {
-	    return (0, _string.string)(10) + '@' + (d ? d : (0, _domain.domain)());
-	}
-
-/***/ },
-/* 22 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1439,9 +1481,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.domain = domain;
 	
-	var _string = __webpack_require__(20);
+	var _string = __webpack_require__(18);
 	
-	var _random = __webpack_require__(13);
+	var _random = __webpack_require__(14);
 	
 	var domains = ['.com', '.net', '.org', '.info', '.biz', '.io'];
 	
@@ -1450,7 +1492,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 23 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1460,7 +1502,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.url = url;
 	
-	var _domain = __webpack_require__(22);
+	var _domain = __webpack_require__(19);
 	
 	function url() {
 	    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
@@ -1510,7 +1552,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 24 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1520,9 +1562,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.integer = integer;
 	
-	var _random = __webpack_require__(13);
+	var _random = __webpack_require__(14);
 	
-	var _parser = __webpack_require__(25);
+	var _parser = __webpack_require__(22);
 	
 	function integer() {
 	
@@ -1548,7 +1590,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 25 */
+/* 22 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1556,16 +1598,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.mapStrTypes = mapStrTypes;
 	exports.parseFormat = parseFormat;
 	exports.tokenize = tokenize;
-	var convertStr = function convertStr(str, scope) {
+	var convertStr = function convertStr(str) {
 	    if (str == null) return str;
 	    if (str === 'true') return true;
 	    if (str === 'false') return false;
 	    if (!isNaN(str)) return +str;
-	    if (scope[str]) return scope[str];
-	    return str.toString();
+	    if (/".*"/.test(str)) return str.substring(1, str.length - 1);
+	    return { $$scopeVar: true, name: str };
 	};
+	
+	function mapStrTypes(str) {
+	    if (str == null) return str;
+	    if (str === 'true') return true;
+	    if (str === 'false') return false;
+	    if (!isNaN(str)) return +str;
+	    return str.toString();
+	}
 	
 	function parseFormat(formatStr) {
 	    if (formatStr == undefined) return 10;
@@ -1581,7 +1632,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	};
 	
-	function tokenize(template, scope) {
+	function tokenize(template) {
 	    var regex = /#\{(.*?)}/g;
 	    var commands = [];
 	    var m = void 0;
@@ -1592,7 +1643,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            regex.lastIndex++;
 	        }
 	        if (m[1]) {
-	            commands.push({
+	            if (p != m.index) commands.push({
 	                value: template.substring(p, m.index),
 	                skip: true
 	            });
@@ -1604,7 +1655,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            commands.push({
 	                name: name ? name[1] : '',
 	                parameters: params ? (params[1] || '').trim().split(',').map(function (p) {
-	                    return convertStr(p.trim(), scope);
+	                    return convertStr(p.trim());
 	                }) : []
 	            });
 	        }
@@ -1615,11 +1666,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        skip: true
 	    });
 	
-	    return commands;
-	};
+	    return { $$bsToken: true, commands: commands };
+	}
 
 /***/ },
-/* 26 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1629,9 +1680,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.float = float;
 	
-	var _random = __webpack_require__(13);
+	var _random = __webpack_require__(14);
 	
-	var _parser = __webpack_require__(25);
+	var _parser = __webpack_require__(22);
 	
 	function float() {
 	
@@ -1650,7 +1701,339 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.boolean = boolean;
+	
+	var _random = __webpack_require__(14);
+	
+	function boolean() {
+	    return (0, _random.pick)([true, false]);
+	}
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.uuid = uuid;
+	function uuid() {
+	    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+	        var r = Math.random() * 16 | 0,
+	            v = c == 'x' ? r : r & 0x3 | 0x8;
+	        return v.toString(16);
+	    });
+	}
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.hash = hash;
+	
+	var _string = __webpack_require__(18);
+	
+	function hash(str) {
+	    str = str || (0, _string.string)(25, '[0-9a-zA-Z]');
+	    var hash = 0,
+	        i = void 0,
+	        chr = void 0,
+	        len = void 0;
+	
+	    for (i = 0, len = str.length; i < len; i++) {
+	        chr = str.charCodeAt(i);
+	        hash = (hash << 5) - hash + chr;
+	        hash |= 0;
+	    }
+	    return hash;
+	}
+
+/***/ },
 /* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.md5 = md5;
+	
+	var _string = __webpack_require__(18);
+	
+	/*
+	 * http://www.myersdaily.org/joseph/javascript/md5-text.html
+	 */
+	var md5cycle = function md5cycle(x, k) {
+	    var a = x[0],
+	        b = x[1],
+	        c = x[2],
+	        d = x[3];
+	
+	    a = ff(a, b, c, d, k[0], 7, -680876936);
+	    d = ff(d, a, b, c, k[1], 12, -389564586);
+	    c = ff(c, d, a, b, k[2], 17, 606105819);
+	    b = ff(b, c, d, a, k[3], 22, -1044525330);
+	    a = ff(a, b, c, d, k[4], 7, -176418897);
+	    d = ff(d, a, b, c, k[5], 12, 1200080426);
+	    c = ff(c, d, a, b, k[6], 17, -1473231341);
+	    b = ff(b, c, d, a, k[7], 22, -45705983);
+	    a = ff(a, b, c, d, k[8], 7, 1770035416);
+	    d = ff(d, a, b, c, k[9], 12, -1958414417);
+	    c = ff(c, d, a, b, k[10], 17, -42063);
+	    b = ff(b, c, d, a, k[11], 22, -1990404162);
+	    a = ff(a, b, c, d, k[12], 7, 1804603682);
+	    d = ff(d, a, b, c, k[13], 12, -40341101);
+	    c = ff(c, d, a, b, k[14], 17, -1502002290);
+	    b = ff(b, c, d, a, k[15], 22, 1236535329);
+	
+	    a = gg(a, b, c, d, k[1], 5, -165796510);
+	    d = gg(d, a, b, c, k[6], 9, -1069501632);
+	    c = gg(c, d, a, b, k[11], 14, 643717713);
+	    b = gg(b, c, d, a, k[0], 20, -373897302);
+	    a = gg(a, b, c, d, k[5], 5, -701558691);
+	    d = gg(d, a, b, c, k[10], 9, 38016083);
+	    c = gg(c, d, a, b, k[15], 14, -660478335);
+	    b = gg(b, c, d, a, k[4], 20, -405537848);
+	    a = gg(a, b, c, d, k[9], 5, 568446438);
+	    d = gg(d, a, b, c, k[14], 9, -1019803690);
+	    c = gg(c, d, a, b, k[3], 14, -187363961);
+	    b = gg(b, c, d, a, k[8], 20, 1163531501);
+	    a = gg(a, b, c, d, k[13], 5, -1444681467);
+	    d = gg(d, a, b, c, k[2], 9, -51403784);
+	    c = gg(c, d, a, b, k[7], 14, 1735328473);
+	    b = gg(b, c, d, a, k[12], 20, -1926607734);
+	
+	    a = hh(a, b, c, d, k[5], 4, -378558);
+	    d = hh(d, a, b, c, k[8], 11, -2022574463);
+	    c = hh(c, d, a, b, k[11], 16, 1839030562);
+	    b = hh(b, c, d, a, k[14], 23, -35309556);
+	    a = hh(a, b, c, d, k[1], 4, -1530992060);
+	    d = hh(d, a, b, c, k[4], 11, 1272893353);
+	    c = hh(c, d, a, b, k[7], 16, -155497632);
+	    b = hh(b, c, d, a, k[10], 23, -1094730640);
+	    a = hh(a, b, c, d, k[13], 4, 681279174);
+	    d = hh(d, a, b, c, k[0], 11, -358537222);
+	    c = hh(c, d, a, b, k[3], 16, -722521979);
+	    b = hh(b, c, d, a, k[6], 23, 76029189);
+	    a = hh(a, b, c, d, k[9], 4, -640364487);
+	    d = hh(d, a, b, c, k[12], 11, -421815835);
+	    c = hh(c, d, a, b, k[15], 16, 530742520);
+	    b = hh(b, c, d, a, k[2], 23, -995338651);
+	
+	    a = ii(a, b, c, d, k[0], 6, -198630844);
+	    d = ii(d, a, b, c, k[7], 10, 1126891415);
+	    c = ii(c, d, a, b, k[14], 15, -1416354905);
+	    b = ii(b, c, d, a, k[5], 21, -57434055);
+	    a = ii(a, b, c, d, k[12], 6, 1700485571);
+	    d = ii(d, a, b, c, k[3], 10, -1894986606);
+	    c = ii(c, d, a, b, k[10], 15, -1051523);
+	    b = ii(b, c, d, a, k[1], 21, -2054922799);
+	    a = ii(a, b, c, d, k[8], 6, 1873313359);
+	    d = ii(d, a, b, c, k[15], 10, -30611744);
+	    c = ii(c, d, a, b, k[6], 15, -1560198380);
+	    b = ii(b, c, d, a, k[13], 21, 1309151649);
+	    a = ii(a, b, c, d, k[4], 6, -145523070);
+	    d = ii(d, a, b, c, k[11], 10, -1120210379);
+	    c = ii(c, d, a, b, k[2], 15, 718787259);
+	    b = ii(b, c, d, a, k[9], 21, -343485551);
+	
+	    x[0] = add32(a, x[0]);
+	    x[1] = add32(b, x[1]);
+	    x[2] = add32(c, x[2]);
+	    x[3] = add32(d, x[3]);
+	};
+	
+	var cmn = function cmn(q, a, b, x, s, t) {
+	    a = add32(add32(a, q), add32(x, t));
+	    return add32(a << s | a >>> 32 - s, b);
+	};
+	
+	var ff = function ff(a, b, c, d, x, s, t) {
+	    return cmn(b & c | ~b & d, a, b, x, s, t);
+	};
+	
+	var gg = function gg(a, b, c, d, x, s, t) {
+	    return cmn(b & d | c & ~d, a, b, x, s, t);
+	};
+	
+	var hh = function hh(a, b, c, d, x, s, t) {
+	    return cmn(b ^ c ^ d, a, b, x, s, t);
+	};
+	
+	var ii = function ii(a, b, c, d, x, s, t) {
+	    return cmn(c ^ (b | ~d), a, b, x, s, t);
+	};
+	
+	var md51 = function md51(s) {
+	    var txt = '',
+	        n = s.length,
+	        state = [1732584193, -271733879, -1732584194, 271733878],
+	        i = void 0;
+	    for (i = 64; i <= s.length; i += 64) {
+	        md5cycle(state, md5blk(s.substring(i - 64, i)));
+	    }
+	    s = s.substring(i - 64);
+	    var tail = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	    for (i = 0; i < s.length; i++) {
+	        tail[i >> 2] |= s.charCodeAt(i) << (i % 4 << 3);
+	    }tail[i >> 2] |= 0x80 << (i % 4 << 3);
+	    if (i > 55) {
+	        md5cycle(state, tail);
+	        for (i = 0; i < 16; i++) {
+	            tail[i] = 0;
+	        }
+	    }
+	    tail[14] = n * 8;
+	    md5cycle(state, tail);
+	    return state;
+	};
+	
+	var md5blk = function md5blk(s) {
+	    /* I figured global was faster.   */
+	    var md5blks = [],
+	        i = void 0; /* Andy King said do it this way. */
+	    for (i = 0; i < 64; i += 4) {
+	        md5blks[i >> 2] = s.charCodeAt(i) + (s.charCodeAt(i + 1) << 8) + (s.charCodeAt(i + 2) << 16) + (s.charCodeAt(i + 3) << 24);
+	    }
+	    return md5blks;
+	};
+	
+	var hex_chr = '0123456789abcdef'.split('');
+	
+	var rhex = function rhex(n) {
+	    var s = '',
+	        j = 0;
+	    for (; j < 4; j++) {
+	        s += hex_chr[n >> j * 8 + 4 & 0x0F] + hex_chr[n >> j * 8 & 0x0F];
+	    }return s;
+	};
+	
+	var hex = function hex(x) {
+	    for (var i = 0; i < x.length; i++) {
+	        x[i] = rhex(x[i]);
+	    }return x.join('');
+	};
+	
+	var add32 = function add32(a, b) {
+	    return a + b & 0xFFFFFFFF;
+	};
+	
+	function md5(s) {
+	    s = s || (0, _string.string)(25, '[0-9a-zA-Z]');
+	    return hex(md51(s));
+	}
+	
+	// if (md5('hello') != '5d41402abc4b2a76b9719d911017c592') {
+	//     add32 = function (x, y) {
+	//         let lsw = (x & 0xFFFF) + (y & 0xFFFF),
+	//             msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+	//         return (msw << 16) | (lsw & 0xFFFF);
+	//     }
+	//}
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.fullName = fullName;
+	
+	var _firstName = __webpack_require__(29);
+	
+	var _lastName = __webpack_require__(30);
+	
+	function fullName(gender) {
+	    return (0, _firstName.firstName)(gender) + ' ' + (0, _lastName.lastName)();
+	}
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.firstName = firstName;
+	
+	var _config = __webpack_require__(1);
+	
+	var _random = __webpack_require__(14);
+	
+	function firstName(gender) {
+	    var dataset = (0, _config.getDataSet)();
+	    var names = gender === undefined ? dataset.firstNames.male.concat(dataset.firstNames.female) : gender === 0 || gender === 'female' ? dataset.firstNames.female : dataset.firstNames.male;
+	
+	    return (0, _random.pick)(names);
+	}
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.lastName = lastName;
+	
+	var _config = __webpack_require__(1);
+	
+	var _random = __webpack_require__(14);
+	
+	function lastName() {
+	    var dataset = (0, _config.getDataSet)();
+	    return (0, _random.pick)(dataset.lastNames);
+	}
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.gender = gender;
+	
+	var _config = __webpack_require__(1);
+	
+	var _random = __webpack_require__(14);
+	
+	var GENDER = [0, // female
+	1 // male
+	];
+	
+	function gender(isNum) {
+	    var g = (0, _random.pick)(GENDER);
+	    if (isNum) return g;else return (0, _config.getDataSet)().gender[g];
+	}
+
+/***/ },
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1660,7 +2043,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.phone = phone;
 	
-	var _string = __webpack_require__(20);
+	var _string = __webpack_require__(18);
 	
 	function phone(format) {
 	    var r = /(X+)/g;
@@ -1671,7 +2054,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 28 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1683,11 +2066,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _config = __webpack_require__(1);
 	
-	var _errors = __webpack_require__(10);
+	var _errors = __webpack_require__(11);
 	
-	var _random = __webpack_require__(13);
+	var _random = __webpack_require__(14);
 	
-	var _string = __webpack_require__(20);
+	var _string = __webpack_require__(18);
 	
 	function street() {
 	    var location = (0, _config.getDataSet)().location;
@@ -1703,7 +2086,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 29 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1715,9 +2098,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _config = __webpack_require__(1);
 	
-	var _errors = __webpack_require__(10);
+	var _errors = __webpack_require__(11);
 	
-	var _random = __webpack_require__(13);
+	var _random = __webpack_require__(14);
 	
 	function country(isCode) {
 	    var loc = (0, _config.getDataSet)().location;
@@ -1726,7 +2109,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 30 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1736,11 +2119,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.address = address;
 	
-	var _string = __webpack_require__(20);
+	var _string = __webpack_require__(18);
 	
-	var _street = __webpack_require__(28);
+	var _street = __webpack_require__(33);
 	
-	var _country = __webpack_require__(29);
+	var _country = __webpack_require__(34);
 	
 	function address() {
 	    var st = (0, _street.street)();
@@ -1752,7 +2135,542 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 31 */
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.identicon = identicon;
+	
+	var _identicon = __webpack_require__(37);
+	
+	var _identicon2 = _interopRequireDefault(_identicon);
+	
+	var _hash = __webpack_require__(26);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function identicon(hashStr, size) {
+	    hashStr = hashStr || (0, _hash.hash)();
+	    size = size || 200;
+	
+	    var base64 = new _identicon2.default(hashStr, size).toString();
+	
+	    return 'data:image/png;base64,' + base64;
+	}
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Identicon.js v1.3.0
+	 * http://github.com/stewartlord/identicon.js
+	 *
+	 * Requires PNGLib
+	 * http://www.xarg.org/download/pnglib.js
+	 *
+	 * Copyright 2013, Stewart Lord
+	 * Released under the BSD license
+	 * http://www.opensource.org/licenses/bsd-license.php
+	 */
+	
+	(function() {
+	    var PNGlib;
+	    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+	        PNGlib = __webpack_require__(38);
+	    } else {
+	        PNGlib = window.PNGlib;
+	    }
+	
+	    var Identicon = function(hash, options){
+	        this.defaults = {
+	            background: [240, 240, 240, 255],
+	            hash:       this.createHashFromString((new Date()).toISOString()),
+	            margin:     0.08,
+	            size:       64
+	        };
+	
+	        this.options     = typeof(options) === 'object' ? options : this.defaults;
+	
+	        // backward compatibility with old constructor (hash, size, margin)
+	        if (arguments[1] && typeof(arguments[1]) === 'number') { this.options.size   = arguments[1]; }
+	        if (arguments[2])                                      { this.options.margin = arguments[2]; }
+	
+	        this.hash        = hash                    || this.defaults.hash;
+	        this.background  = this.options.background || this.defaults.background;
+	        this.foreground  = this.options.foreground;
+	        this.margin      = this.options.margin     || this.defaults.margin;
+	        this.size        = this.options.size       || this.defaults.size;
+	    };
+	
+	    Identicon.prototype = {
+	        background: null,
+	        foreground: null,
+	        hash:       null,
+	        margin:     null,
+	        size:       null,
+	
+	        render: function(){
+	            var hash    = this.hash,
+	                size    = this.size,
+	                baseMargin  = Math.floor(size * this.margin),
+	                cell    = Math.floor((size - (baseMargin * 2)) / 5),
+	                margin  = Math.floor((size - cell * 5) / 2),
+	                image   = new PNGlib(size, size, 256);
+	
+	            // light-grey background
+	            var bg      = image.color(this.background[0], this.background[1], this.background[2], this.background[3]),
+	                fg;
+	
+	            if (this.foreground) {
+	              fg        = image.color(this.foreground[0], this.foreground[1], this.foreground[2]);
+	            } else {
+	              // foreground is last 7 chars as hue at 50% saturation, 70% brightness
+	              var rgb   = this.hsl2rgb(parseInt(hash.substr(-7), 16) / 0xfffffff, 0.5, 0.7);
+	              fg        = image.color(rgb[0] * 255, rgb[1] * 255, rgb[2] * 255);
+	            }
+	
+	            // the first 15 characters of the hash control the pixels (even/odd)
+	            // they are drawn down the middle first, then mirrored outwards
+	            var i, color;
+	            for (i = 0; i < 15; i++) {
+	                color = parseInt(hash.charAt(i), 16) % 2 ? bg : fg;
+	                if (i < 5) {
+	                    this.rectangle(2 * cell + margin, i * cell + margin, cell, cell, color, image);
+	                } else if (i < 10) {
+	                    this.rectangle(1 * cell + margin, (i - 5) * cell + margin, cell, cell, color, image);
+	                    this.rectangle(3 * cell + margin, (i - 5) * cell + margin, cell, cell, color, image);
+	                } else if (i < 15) {
+	                    this.rectangle(0 * cell + margin, (i - 10) * cell + margin, cell, cell, color, image);
+	                    this.rectangle(4 * cell + margin, (i - 10) * cell + margin, cell, cell, color, image);
+	                }
+	            }
+	
+	            return image;
+	        },
+	
+	        rectangle: function(x, y, w, h, color, image) {
+	            var i, j;
+	            for (i = x; i < x + w; i++) {
+	                for (j = y; j < y + h; j++) {
+	                    image.buffer[image.index(i, j)] = color;
+	                }
+	            }
+	        },
+	
+	        // adapted from: https://gist.github.com/aemkei/1325937
+	        hsl2rgb: function(h, s, b){
+	            h *= 6;
+	            s = [
+	                b += s *= b < .5 ? b : 1 - b,
+	                b - h % 1 * s * 2,
+	                b -= s *= 2,
+	                b,
+	                b + h % 1 * s,
+	                b + s
+	            ];
+	
+	            return[
+	                s[ ~~h    % 6 ],  // red
+	                s[ (h|16) % 6 ],  // green
+	                s[ (h|8)  % 6 ]   // blue
+	            ];
+	        },
+	
+	        toString: function(){
+	            return this.render().getBase64();
+	        },
+	
+	        // Creates a consistent-length hash from a string
+	        createHashFromString: function(str) {
+	          var hash = '0', salt = 'identicon', i, chr, len;
+	
+	          if (!str) {
+	            return hash;
+	          }
+	
+	          str += salt + str; // Better randomization for short inputs.
+	
+	          for (i = 0, len = str.length; i < len; i++) {
+	            chr   = str.charCodeAt(i);
+	            hash  = ((hash << 5) - hash) + chr;
+	            hash |= 0; // Convert to 32bit integer
+	          }
+	          return hash.toString();
+	        }
+	    };
+	
+	    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+	        module.exports = Identicon;
+	    } else {
+	        window.Identicon = Identicon;
+	    }
+	})();
+
+
+/***/ },
+/* 38 */
+/***/ function(module, exports) {
+
+	/**
+	* A handy class to calculate color values.
+	*
+	* @version 1.0
+	* @author Robert Eisele <robert@xarg.org>
+	* @copyright Copyright (c) 2010, Robert Eisele
+	* @link http://www.xarg.org/2010/03/generate-client-side-png-files-using-javascript/
+	* @license http://www.opensource.org/licenses/bsd-license.php BSD License
+	*
+	*/
+	
+	(function() {
+	
+		// helper functions for that ctx
+		function write(buffer, offs) {
+			for (var i = 2; i < arguments.length; i++) {
+				for (var j = 0; j < arguments[i].length; j++) {
+					buffer[offs++] = arguments[i].charAt(j);
+				}
+			}
+		}
+	
+		function byte2(w) {
+			return String.fromCharCode((w >> 8) & 255, w & 255);
+		}
+	
+		function byte4(w) {
+			return String.fromCharCode((w >> 24) & 255, (w >> 16) & 255, (w >> 8) & 255, w & 255);
+		}
+	
+		function byte2lsb(w) {
+			return String.fromCharCode(w & 255, (w >> 8) & 255);
+		}
+	
+		// modified from original source to support NPM
+		var PNGlib = function(width,height,depth) {
+	
+			this.width   = width;
+			this.height  = height;
+			this.depth   = depth;
+	
+			// pixel data and row filter identifier size
+			this.pix_size = height * (width + 1);
+	
+			// deflate header, pix_size, block headers, adler32 checksum
+			this.data_size = 2 + this.pix_size + 5 * Math.floor((0xfffe + this.pix_size) / 0xffff) + 4;
+	
+			// offsets and sizes of Png chunks
+			this.ihdr_offs = 0;									// IHDR offset and size
+			this.ihdr_size = 4 + 4 + 13 + 4;
+			this.plte_offs = this.ihdr_offs + this.ihdr_size;	// PLTE offset and size
+			this.plte_size = 4 + 4 + 3 * depth + 4;
+			this.trns_offs = this.plte_offs + this.plte_size;	// tRNS offset and size
+			this.trns_size = 4 + 4 + depth + 4;
+			this.idat_offs = this.trns_offs + this.trns_size;	// IDAT offset and size
+			this.idat_size = 4 + 4 + this.data_size + 4;
+			this.iend_offs = this.idat_offs + this.idat_size;	// IEND offset and size
+			this.iend_size = 4 + 4 + 4;
+			this.buffer_size  = this.iend_offs + this.iend_size;	// total PNG size
+	
+			this.buffer  = new Array();
+			this.palette = new Object();
+			this.pindex  = 0;
+	
+			var _crc32 = new Array();
+	
+			// initialize buffer with zero bytes
+			for (var i = 0; i < this.buffer_size; i++) {
+				this.buffer[i] = "\x00";
+			}
+	
+			// initialize non-zero elements
+			write(this.buffer, this.ihdr_offs, byte4(this.ihdr_size - 12), 'IHDR', byte4(width), byte4(height), "\x08\x03");
+			write(this.buffer, this.plte_offs, byte4(this.plte_size - 12), 'PLTE');
+			write(this.buffer, this.trns_offs, byte4(this.trns_size - 12), 'tRNS');
+			write(this.buffer, this.idat_offs, byte4(this.idat_size - 12), 'IDAT');
+			write(this.buffer, this.iend_offs, byte4(this.iend_size - 12), 'IEND');
+	
+			// initialize deflate header
+			var header = ((8 + (7 << 4)) << 8) | (3 << 6);
+			header+= 31 - (header % 31);
+	
+			write(this.buffer, this.idat_offs + 8, byte2(header));
+	
+			// initialize deflate block headers
+			for (var i = 0; (i << 16) - 1 < this.pix_size; i++) {
+				var size, bits;
+				if (i + 0xffff < this.pix_size) {
+					size = 0xffff;
+					bits = "\x00";
+				} else {
+					size = this.pix_size - (i << 16) - i;
+					bits = "\x01";
+				}
+				write(this.buffer, this.idat_offs + 8 + 2 + (i << 16) + (i << 2), bits, byte2lsb(size), byte2lsb(~size));
+			}
+	
+			/* Create crc32 lookup table */
+			for (var i = 0; i < 256; i++) {
+				var c = i;
+				for (var j = 0; j < 8; j++) {
+					if (c & 1) {
+						c = -306674912 ^ ((c >> 1) & 0x7fffffff);
+					} else {
+						c = (c >> 1) & 0x7fffffff;
+					}
+				}
+				_crc32[i] = c;
+			}
+	
+			// compute the index into a png for a given pixel
+			this.index = function(x,y) {
+				var i = y * (this.width + 1) + x + 1;
+				var j = this.idat_offs + 8 + 2 + 5 * Math.floor((i / 0xffff) + 1) + i;
+				return j;
+			}
+	
+			// convert a color and build up the palette
+			this.color = function(red, green, blue, alpha) {
+	
+				alpha = alpha >= 0 ? alpha : 255;
+				var color = (((((alpha << 8) | red) << 8) | green) << 8) | blue;
+	
+				if (typeof this.palette[color] == "undefined") {
+					if (this.pindex == this.depth) return "\x00";
+	
+					var ndx = this.plte_offs + 8 + 3 * this.pindex;
+	
+					this.buffer[ndx + 0] = String.fromCharCode(red);
+					this.buffer[ndx + 1] = String.fromCharCode(green);
+					this.buffer[ndx + 2] = String.fromCharCode(blue);
+					this.buffer[this.trns_offs+8+this.pindex] = String.fromCharCode(alpha);
+	
+					this.palette[color] = String.fromCharCode(this.pindex++);
+				}
+				return this.palette[color];
+			}
+	
+			// output a PNG string, Base64 encoded
+			this.getBase64 = function() {
+	
+				var s = this.getDump();
+	
+				var ch = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+				var c1, c2, c3, e1, e2, e3, e4;
+				var l = s.length;
+				var i = 0;
+				var r = "";
+	
+				do {
+					c1 = s.charCodeAt(i);
+					e1 = c1 >> 2;
+					c2 = s.charCodeAt(i+1);
+					e2 = ((c1 & 3) << 4) | (c2 >> 4);
+					c3 = s.charCodeAt(i+2);
+					if (l < i+2) { e3 = 64; } else { e3 = ((c2 & 0xf) << 2) | (c3 >> 6); }
+					if (l < i+3) { e4 = 64; } else { e4 = c3 & 0x3f; }
+					r+= ch.charAt(e1) + ch.charAt(e2) + ch.charAt(e3) + ch.charAt(e4);
+				} while ((i+= 3) < l);
+				return r;
+			}
+	
+			// output a PNG string
+			this.getDump = function() {
+	
+				// compute adler32 of output pixels + row filter bytes
+				var BASE = 65521; /* largest prime smaller than 65536 */
+				var NMAX = 5552;  /* NMAX is the largest n such that 255n(n+1)/2 + (n+1)(BASE-1) <= 2^32-1 */
+				var s1 = 1;
+				var s2 = 0;
+				var n = NMAX;
+	
+				for (var y = 0; y < this.height; y++) {
+					for (var x = -1; x < this.width; x++) {
+						s1+= this.buffer[this.index(x, y)].charCodeAt(0);
+						s2+= s1;
+						if ((n-= 1) == 0) {
+							s1%= BASE;
+							s2%= BASE;
+							n = NMAX;
+						}
+					}
+				}
+				s1%= BASE;
+				s2%= BASE;
+				write(this.buffer, this.idat_offs + this.idat_size - 8, byte4((s2 << 16) | s1));
+	
+				// compute crc32 of the PNG chunks
+				function crc32(png, offs, size) {
+					var crc = -1;
+					for (var i = 4; i < size-4; i += 1) {
+						crc = _crc32[(crc ^ png[offs+i].charCodeAt(0)) & 0xff] ^ ((crc >> 8) & 0x00ffffff);
+					}
+					write(png, offs+size-4, byte4(crc ^ -1));
+				}
+	
+				crc32(this.buffer, this.ihdr_offs, this.ihdr_size);
+				crc32(this.buffer, this.plte_offs, this.plte_size);
+				crc32(this.buffer, this.trns_offs, this.trns_size);
+				crc32(this.buffer, this.idat_offs, this.idat_size);
+				crc32(this.buffer, this.iend_offs, this.iend_size);
+	
+				// convert PNG to string
+				return "\211PNG\r\n\032\n"+this.buffer.join('');
+			}
+		}
+	
+		// modified from original source to support NPM
+		if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+			module.exports = PNGlib;
+		} else {
+			window.PNGlib = PNGlib;
+		}
+	})();
+
+
+/***/ },
+/* 39 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.date = date;
+	
+	var _integer = __webpack_require__(21);
+	
+	function date() {
+	    var before = void 0,
+	        after = void 0;
+	    before = (arguments.length <= 1 ? undefined : arguments[1]) instanceof Date ? arguments.length <= 1 ? undefined : arguments[1] : new Date();
+	    after = (arguments.length <= 0 ? undefined : arguments[0]) instanceof Date ? arguments.length <= 0 ? undefined : arguments[0] : new Date(1970, 1, 1);
+	
+	    if (after > before) {
+	        var _after$before = { after: _after, before: _before },
+	            _before = _after$before.before,
+	            _after = _after$before.after;
+	    }
+	
+	    var dateTime = (0, _integer.integer)(after.getTime(), before.getTime());
+	
+	    return new Date(dateTime);
+	}
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.dateIn = dateIn;
+	
+	var _random = __webpack_require__(14);
+	
+	function dateIn(scope) {
+	    var current = new Date(),
+	        before = void 0,
+	        after = void 0,
+	        c = {
+	        cYr: current.getFullYear(),
+	        cMn: current.getMonth(),
+	        cDt: current.getDate(),
+	        cDy: current.getDay(),
+	        cHr: current.getHours(),
+	        cMin: current.getMinutes(),
+	        cSec: current.getSeconds(),
+	        cMil: current.getMilliseconds()
+	    };
+	
+	    if (scope == 'day') {
+	        before = new Date(c.cYr, c.cMn, c.cDt + 1).getTime() - 1;
+	        after = new Date(c.cYr, c.cMn, c.cDt - 1, 23, 59, 59, 999).getTime() + 1;
+	    } else if (scope == 'month') {
+	        before = new Date(c.cYr, c.cMn + 1, 0).getTime() - 1;
+	        after = new Date(c.cYr, c.cMn - 1, 31, 23, 59, 59, 999).getTime() + 1;
+	    } else if (scope == 'year') {
+	        before = new Date(c.cYr + 1, 0, 1).getTime() - 1;
+	        after = new Date(c.cYr - 1, 11, 31, 23, 59, 59, 999).getTime() + 1;
+	    } else {
+	        var firstDay = c.cDt - c.cDy + (c.cDy == 0 ? -6 : 1);
+	        var lastDay = c.cDt + (c.cDy == 0 ? 0 : 6 - c.cDy) + 1;
+	        before = new Date(c.cYr, c.cMn, lastDay).getTime() - 1;
+	        after = new Date(c.cYr, c.cMn, firstDay, 23, 59, 59, 999).getTime() + 1;
+	    }
+	
+	    return new Date((0, _random.number)(after, before));
+	}
+
+/***/ },
+/* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.color = color;
+	
+	var _random = __webpack_require__(14);
+	
+	var rgbToHsl = function rgbToHsl(r, g, b) {
+	    var min = Math.min(r, g, b),
+	        max = Math.max(r, g, b),
+	        delta = max - min,
+	        h = void 0,
+	        s = void 0,
+	        v = max;
+	
+	    v = Math.floor(max / 255 * 100);
+	    if (max != 0) s = Math.floor(delta / max * 100);else return [0, 0, 0];
+	
+	    if (r == max) h = (g - b) / delta;else if (g == max) h = 2 + (b - r) / delta;else h = 4 + (r - g) / delta;
+	
+	    h = Math.floor(h * 60);
+	    if (h < 0) h += 360;
+	
+	    return [h, s, v];
+	};
+	
+	var getHexNumber = function getHexNumber(c) {
+	    var hex = c.toString(16);
+	    return hex.length == 1 ? "0" + hex : hex;
+	};
+	
+	var rgbToHex = function rgbToHex(r, g, b) {
+	    return '#' + (getHexNumber(r) + getHexNumber(g) + getHexNumber(b));
+	};
+	
+	function color(format) {
+	    var r = (0, _random.number)(0, 256);
+	    var g = (0, _random.number)(0, 256);
+	    var b = (0, _random.number)(0, 256);
+	
+	    switch (format) {
+	        case 'rgb':
+	            return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+	        case 'hsl':
+	            {
+	                var hsl = rgbToHsl(r, g, b);
+	                return 'hsl(' + hsl[0] + '%, ' + hsl[1] + '%, ' + hsl[2] + '%)';
+	            }
+	        case 'hex':
+	        default:
+	            return rgbToHex(r, g, b);
+	    }
+	}
+
+/***/ },
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1762,13 +2680,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.compile = compile;
 	
-	var _index = __webpack_require__(11);
+	var _index = __webpack_require__(12);
 	
-	var funcs = _interopRequireWildcard(_index);
+	var functions = _interopRequireWildcard(_index);
 	
-	var _errors = __webpack_require__(10);
+	var _errors = __webpack_require__(11);
 	
-	var _parser = __webpack_require__(25);
+	var _parser = __webpack_require__(22);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
@@ -1778,25 +2696,745 @@ return /******/ (function(modules) { // webpackBootstrap
 	    scope = scope || {};
 	    if (typeof template != 'string') throw (0, _errors.INVALID_TEMPLATE)(template);
 	
-	    var commands = (0, _parser.tokenize)(template, scope);
+	    var token = (0, _parser.tokenize)(template, scope);
 	
-	    commands.forEach(function (command) {
+	    token.commands.forEach(function (command) {
 	        if (!command.skip) {
-	            var _funcs$command$name;
 	
-	            if (!funcs[command.name]) throw (0, _errors.NO_FUNCTION_FOUND_IN_TEMPLATE)(command.name, template);
-	            command.value = (_funcs$command$name = funcs[command.name]).call.apply(_funcs$command$name, [null].concat(_toConsumableArray(command.parameters)));
+	            var ref = scope ? scope[command.name] || functions[command.name] : functions[command.name];
+	
+	            if (ref == null) throw (0, _errors.NO_FUNCTION_FOUND_IN_TEMPLATE)(command.name, template);
+	
+	            command.parameters.map(function (param) {
+	                if (param.$$scopeVar) {
+	                    return scope[param.name];
+	                } else {
+	                    return param;
+	                }
+	            });
+	
+	            command.value = typeof ref != 'function' ? ref.toString() : ref.call.apply(ref, [functions].concat(_toConsumableArray(command.parameters)));
 	        }
 	    });
 	
-	    return commands.length > 0 ? serialize(commands) : template;
+	    return token.commands.length > 0 ? serialize(token.commands) : template;
 	}
 	
 	var serialize = function serialize(commands) {
-	    return commands.map(function (p) {
+	    return (0, _parser.mapStrTypes)(commands.map(function (p) {
 	        return p.value;
-	    }).join('');
+	    }).join(''));
 	};
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	
+	exports.schema = schema;
+	
+	var _lodash = __webpack_require__(44);
+	
+	var _lodash2 = _interopRequireDefault(_lodash);
+	
+	var _parser = __webpack_require__(22);
+	
+	var _errors = __webpack_require__(11);
+	
+	var _index = __webpack_require__(12);
+	
+	var functions = _interopRequireWildcard(_index);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	
+	var isPrimitive = function isPrimitive(obj) {
+	    var types = ['number', 'string', 'null', 'undefined', 'boolean'];
+	    return types.indexOf(typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) > -1;
+	};
+	
+	var isObject = function isObject(obj) {
+	    return Object.prototype.toString.call(obj) == '[object Object]';
+	};
+	
+	var isArray = function isArray(obj) {
+	    return Object.prototype.toString.call(obj) == '[object Array]';
+	};
+	
+	var parseSchemaTree = function parseSchemaTree(obj) {
+	    if (typeof obj == 'function') throw new Error('schema property does not allow function');
+	
+	    if (isObject(obj)) {
+	        var _iteratorNormalCompletion = true;
+	        var _didIteratorError = false;
+	        var _iteratorError = undefined;
+	
+	        try {
+	            for (var _iterator = Object.keys(obj)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	                var key = _step.value;
+	
+	                if (isPrimitive(obj[key])) {
+	                    if (typeof obj[key] == 'string') {
+	                        obj[key] = (0, _parser.tokenize)(obj[key]);
+	                    }
+	                } else {
+	                    obj[key] = parseSchemaTree(obj[key]);
+	                }
+	            }
+	        } catch (err) {
+	            _didIteratorError = true;
+	            _iteratorError = err;
+	        } finally {
+	            try {
+	                if (!_iteratorNormalCompletion && _iterator.return) {
+	                    _iterator.return();
+	                }
+	            } finally {
+	                if (_didIteratorError) {
+	                    throw _iteratorError;
+	                }
+	            }
+	        }
+	    } else if (isArray(obj)) {
+	        obj.forEach(function (e, index) {
+	            if (isPrimitive(e)) {
+	                if (typeof e == 'string') {
+	                    obj[index] = (0, _parser.tokenize)(e);
+	                }
+	            } else {
+	                obj[index] = parseSchemaTree(e);
+	            }
+	        });
+	    }
+	
+	    return obj;
+	};
+	
+	function schema(obj) {
+	    if (!isObject(obj)) throw new Error('schema must be an plain object');
+	
+	    return function (scope) {
+	
+	        function loop(o) {
+	            var isArr = isArray(o);
+	            var result = isArr ? [] : {};
+	            (0, _lodash2.default)(o, function (value, itt) {
+	                if (isPrimitive(value)) result[itt] = value;else if (value.$$bsToken) {
+	                    (function () {
+	                        var r = [];
+	                        (0, _lodash2.default)(value.commands, function (command) {
+	                            if (!command.skip) {
+	
+	                                var ref = scope ? scope[command.name] || functions[command.name] : functions[command.name];
+	
+	                                if (ref == null) throw (0, _errors.NO_FUNCTION_FOUND_IN_TEMPLATE)(command.name);
+	
+	                                var params = command.parameters.map(function (param) {
+	                                    if (param.$$scopeVar) {
+	                                        return scope[param.name];
+	                                    } else {
+	                                        return param;
+	                                    }
+	                                });
+	
+	                                r.push(typeof ref != 'function' ? ref.toString() : ref.call.apply(ref, [functions].concat(_toConsumableArray(params))));
+	                            } else {
+	                                r.push(command.value);
+	                            }
+	                        });
+	                        result[itt] = (0, _parser.mapStrTypes)(r.join(''));
+	                    })();
+	                } else {
+	                    result[itt] = loop(value);
+	                }
+	            });
+	            return result;
+	        }
+	
+	        return loop(this);
+	    }.bind(parseSchemaTree(obj));
+	}
+
+/***/ },
+/* 44 */
+/***/ function(module, exports) {
+
+	/**
+	 * lodash (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modularize exports="npm" -o ./`
+	 * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+	 * Released under MIT license <https://lodash.com/license>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 */
+	
+	/** Used as references for various `Number` constants. */
+	var MAX_SAFE_INTEGER = 9007199254740991;
+	
+	/** `Object#toString` result references. */
+	var argsTag = '[object Arguments]',
+	    funcTag = '[object Function]',
+	    genTag = '[object GeneratorFunction]';
+	
+	/** Used to detect unsigned integer values. */
+	var reIsUint = /^(?:0|[1-9]\d*)$/;
+	
+	/**
+	 * A specialized version of `_.forEach` for arrays without support for
+	 * iteratee shorthands.
+	 *
+	 * @private
+	 * @param {Array} [array] The array to iterate over.
+	 * @param {Function} iteratee The function invoked per iteration.
+	 * @returns {Array} Returns `array`.
+	 */
+	function arrayEach(array, iteratee) {
+	  var index = -1,
+	      length = array ? array.length : 0;
+	
+	  while (++index < length) {
+	    if (iteratee(array[index], index, array) === false) {
+	      break;
+	    }
+	  }
+	  return array;
+	}
+	
+	/**
+	 * The base implementation of `_.times` without support for iteratee shorthands
+	 * or max array length checks.
+	 *
+	 * @private
+	 * @param {number} n The number of times to invoke `iteratee`.
+	 * @param {Function} iteratee The function invoked per iteration.
+	 * @returns {Array} Returns the array of results.
+	 */
+	function baseTimes(n, iteratee) {
+	  var index = -1,
+	      result = Array(n);
+	
+	  while (++index < n) {
+	    result[index] = iteratee(index);
+	  }
+	  return result;
+	}
+	
+	/**
+	 * Creates a unary function that invokes `func` with its argument transformed.
+	 *
+	 * @private
+	 * @param {Function} func The function to wrap.
+	 * @param {Function} transform The argument transform.
+	 * @returns {Function} Returns the new function.
+	 */
+	function overArg(func, transform) {
+	  return function(arg) {
+	    return func(transform(arg));
+	  };
+	}
+	
+	/** Used for built-in method references. */
+	var objectProto = Object.prototype;
+	
+	/** Used to check objects for own properties. */
+	var hasOwnProperty = objectProto.hasOwnProperty;
+	
+	/**
+	 * Used to resolve the
+	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+	 * of values.
+	 */
+	var objectToString = objectProto.toString;
+	
+	/** Built-in value references. */
+	var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+	
+	/* Built-in method references for those with the same name as other `lodash` methods. */
+	var nativeKeys = overArg(Object.keys, Object);
+	
+	/**
+	 * Creates an array of the enumerable property names of the array-like `value`.
+	 *
+	 * @private
+	 * @param {*} value The value to query.
+	 * @param {boolean} inherited Specify returning inherited property names.
+	 * @returns {Array} Returns the array of property names.
+	 */
+	function arrayLikeKeys(value, inherited) {
+	  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+	  // Safari 9 makes `arguments.length` enumerable in strict mode.
+	  var result = (isArray(value) || isArguments(value))
+	    ? baseTimes(value.length, String)
+	    : [];
+	
+	  var length = result.length,
+	      skipIndexes = !!length;
+	
+	  for (var key in value) {
+	    if ((inherited || hasOwnProperty.call(value, key)) &&
+	        !(skipIndexes && (key == 'length' || isIndex(key, length)))) {
+	      result.push(key);
+	    }
+	  }
+	  return result;
+	}
+	
+	/**
+	 * The base implementation of `_.forEach` without support for iteratee shorthands.
+	 *
+	 * @private
+	 * @param {Array|Object} collection The collection to iterate over.
+	 * @param {Function} iteratee The function invoked per iteration.
+	 * @returns {Array|Object} Returns `collection`.
+	 */
+	var baseEach = createBaseEach(baseForOwn);
+	
+	/**
+	 * The base implementation of `baseForOwn` which iterates over `object`
+	 * properties returned by `keysFunc` and invokes `iteratee` for each property.
+	 * Iteratee functions may exit iteration early by explicitly returning `false`.
+	 *
+	 * @private
+	 * @param {Object} object The object to iterate over.
+	 * @param {Function} iteratee The function invoked per iteration.
+	 * @param {Function} keysFunc The function to get the keys of `object`.
+	 * @returns {Object} Returns `object`.
+	 */
+	var baseFor = createBaseFor();
+	
+	/**
+	 * The base implementation of `_.forOwn` without support for iteratee shorthands.
+	 *
+	 * @private
+	 * @param {Object} object The object to iterate over.
+	 * @param {Function} iteratee The function invoked per iteration.
+	 * @returns {Object} Returns `object`.
+	 */
+	function baseForOwn(object, iteratee) {
+	  return object && baseFor(object, iteratee, keys);
+	}
+	
+	/**
+	 * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
+	 *
+	 * @private
+	 * @param {Object} object The object to query.
+	 * @returns {Array} Returns the array of property names.
+	 */
+	function baseKeys(object) {
+	  if (!isPrototype(object)) {
+	    return nativeKeys(object);
+	  }
+	  var result = [];
+	  for (var key in Object(object)) {
+	    if (hasOwnProperty.call(object, key) && key != 'constructor') {
+	      result.push(key);
+	    }
+	  }
+	  return result;
+	}
+	
+	/**
+	 * Creates a `baseEach` or `baseEachRight` function.
+	 *
+	 * @private
+	 * @param {Function} eachFunc The function to iterate over a collection.
+	 * @param {boolean} [fromRight] Specify iterating from right to left.
+	 * @returns {Function} Returns the new base function.
+	 */
+	function createBaseEach(eachFunc, fromRight) {
+	  return function(collection, iteratee) {
+	    if (collection == null) {
+	      return collection;
+	    }
+	    if (!isArrayLike(collection)) {
+	      return eachFunc(collection, iteratee);
+	    }
+	    var length = collection.length,
+	        index = fromRight ? length : -1,
+	        iterable = Object(collection);
+	
+	    while ((fromRight ? index-- : ++index < length)) {
+	      if (iteratee(iterable[index], index, iterable) === false) {
+	        break;
+	      }
+	    }
+	    return collection;
+	  };
+	}
+	
+	/**
+	 * Creates a base function for methods like `_.forIn` and `_.forOwn`.
+	 *
+	 * @private
+	 * @param {boolean} [fromRight] Specify iterating from right to left.
+	 * @returns {Function} Returns the new base function.
+	 */
+	function createBaseFor(fromRight) {
+	  return function(object, iteratee, keysFunc) {
+	    var index = -1,
+	        iterable = Object(object),
+	        props = keysFunc(object),
+	        length = props.length;
+	
+	    while (length--) {
+	      var key = props[fromRight ? length : ++index];
+	      if (iteratee(iterable[key], key, iterable) === false) {
+	        break;
+	      }
+	    }
+	    return object;
+	  };
+	}
+	
+	/**
+	 * Checks if `value` is a valid array-like index.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+	 * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+	 */
+	function isIndex(value, length) {
+	  length = length == null ? MAX_SAFE_INTEGER : length;
+	  return !!length &&
+	    (typeof value == 'number' || reIsUint.test(value)) &&
+	    (value > -1 && value % 1 == 0 && value < length);
+	}
+	
+	/**
+	 * Checks if `value` is likely a prototype object.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+	 */
+	function isPrototype(value) {
+	  var Ctor = value && value.constructor,
+	      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
+	
+	  return value === proto;
+	}
+	
+	/**
+	 * Iterates over elements of `collection` and invokes `iteratee` for each element.
+	 * The iteratee is invoked with three arguments: (value, index|key, collection).
+	 * Iteratee functions may exit iteration early by explicitly returning `false`.
+	 *
+	 * **Note:** As with other "Collections" methods, objects with a "length"
+	 * property are iterated like arrays. To avoid this behavior use `_.forIn`
+	 * or `_.forOwn` for object iteration.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @alias each
+	 * @category Collection
+	 * @param {Array|Object} collection The collection to iterate over.
+	 * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+	 * @returns {Array|Object} Returns `collection`.
+	 * @see _.forEachRight
+	 * @example
+	 *
+	 * _([1, 2]).forEach(function(value) {
+	 *   console.log(value);
+	 * });
+	 * // => Logs `1` then `2`.
+	 *
+	 * _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
+	 *   console.log(key);
+	 * });
+	 * // => Logs 'a' then 'b' (iteration order is not guaranteed).
+	 */
+	function forEach(collection, iteratee) {
+	  var func = isArray(collection) ? arrayEach : baseEach;
+	  return func(collection, typeof iteratee == 'function' ? iteratee : identity);
+	}
+	
+	/**
+	 * Checks if `value` is likely an `arguments` object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+	 *  else `false`.
+	 * @example
+	 *
+	 * _.isArguments(function() { return arguments; }());
+	 * // => true
+	 *
+	 * _.isArguments([1, 2, 3]);
+	 * // => false
+	 */
+	function isArguments(value) {
+	  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+	  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
+	    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
+	}
+	
+	/**
+	 * Checks if `value` is classified as an `Array` object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+	 * @example
+	 *
+	 * _.isArray([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isArray(document.body.children);
+	 * // => false
+	 *
+	 * _.isArray('abc');
+	 * // => false
+	 *
+	 * _.isArray(_.noop);
+	 * // => false
+	 */
+	var isArray = Array.isArray;
+	
+	/**
+	 * Checks if `value` is array-like. A value is considered array-like if it's
+	 * not a function and has a `value.length` that's an integer greater than or
+	 * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+	 * @example
+	 *
+	 * _.isArrayLike([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isArrayLike(document.body.children);
+	 * // => true
+	 *
+	 * _.isArrayLike('abc');
+	 * // => true
+	 *
+	 * _.isArrayLike(_.noop);
+	 * // => false
+	 */
+	function isArrayLike(value) {
+	  return value != null && isLength(value.length) && !isFunction(value);
+	}
+	
+	/**
+	 * This method is like `_.isArrayLike` except that it also checks if `value`
+	 * is an object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an array-like object,
+	 *  else `false`.
+	 * @example
+	 *
+	 * _.isArrayLikeObject([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isArrayLikeObject(document.body.children);
+	 * // => true
+	 *
+	 * _.isArrayLikeObject('abc');
+	 * // => false
+	 *
+	 * _.isArrayLikeObject(_.noop);
+	 * // => false
+	 */
+	function isArrayLikeObject(value) {
+	  return isObjectLike(value) && isArrayLike(value);
+	}
+	
+	/**
+	 * Checks if `value` is classified as a `Function` object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+	 * @example
+	 *
+	 * _.isFunction(_);
+	 * // => true
+	 *
+	 * _.isFunction(/abc/);
+	 * // => false
+	 */
+	function isFunction(value) {
+	  // The use of `Object#toString` avoids issues with the `typeof` operator
+	  // in Safari 8-9 which returns 'object' for typed array and other constructors.
+	  var tag = isObject(value) ? objectToString.call(value) : '';
+	  return tag == funcTag || tag == genTag;
+	}
+	
+	/**
+	 * Checks if `value` is a valid array-like length.
+	 *
+	 * **Note:** This method is loosely based on
+	 * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+	 * @example
+	 *
+	 * _.isLength(3);
+	 * // => true
+	 *
+	 * _.isLength(Number.MIN_VALUE);
+	 * // => false
+	 *
+	 * _.isLength(Infinity);
+	 * // => false
+	 *
+	 * _.isLength('3');
+	 * // => false
+	 */
+	function isLength(value) {
+	  return typeof value == 'number' &&
+	    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+	}
+	
+	/**
+	 * Checks if `value` is the
+	 * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+	 * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+	 * @example
+	 *
+	 * _.isObject({});
+	 * // => true
+	 *
+	 * _.isObject([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObject(_.noop);
+	 * // => true
+	 *
+	 * _.isObject(null);
+	 * // => false
+	 */
+	function isObject(value) {
+	  var type = typeof value;
+	  return !!value && (type == 'object' || type == 'function');
+	}
+	
+	/**
+	 * Checks if `value` is object-like. A value is object-like if it's not `null`
+	 * and has a `typeof` result of "object".
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+	 * @example
+	 *
+	 * _.isObjectLike({});
+	 * // => true
+	 *
+	 * _.isObjectLike([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObjectLike(_.noop);
+	 * // => false
+	 *
+	 * _.isObjectLike(null);
+	 * // => false
+	 */
+	function isObjectLike(value) {
+	  return !!value && typeof value == 'object';
+	}
+	
+	/**
+	 * Creates an array of the own enumerable property names of `object`.
+	 *
+	 * **Note:** Non-object values are coerced to objects. See the
+	 * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+	 * for more details.
+	 *
+	 * @static
+	 * @since 0.1.0
+	 * @memberOf _
+	 * @category Object
+	 * @param {Object} object The object to query.
+	 * @returns {Array} Returns the array of property names.
+	 * @example
+	 *
+	 * function Foo() {
+	 *   this.a = 1;
+	 *   this.b = 2;
+	 * }
+	 *
+	 * Foo.prototype.c = 3;
+	 *
+	 * _.keys(new Foo);
+	 * // => ['a', 'b'] (iteration order is not guaranteed)
+	 *
+	 * _.keys('hi');
+	 * // => ['0', '1']
+	 */
+	function keys(object) {
+	  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+	}
+	
+	/**
+	 * This method returns the first argument it receives.
+	 *
+	 * @static
+	 * @since 0.1.0
+	 * @memberOf _
+	 * @category Util
+	 * @param {*} value Any value.
+	 * @returns {*} Returns `value`.
+	 * @example
+	 *
+	 * var object = { 'a': 1 };
+	 *
+	 * console.log(_.identity(object) === object);
+	 * // => true
+	 */
+	function identity(value) {
+	  return value;
+	}
+	
+	module.exports = forEach;
+
 
 /***/ }
 /******/ ])

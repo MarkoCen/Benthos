@@ -7,6 +7,7 @@ exports.NO_DATASET_FOUND = NO_DATASET_FOUND;
 exports.INVALID_TEMPLATE = INVALID_TEMPLATE;
 exports.NO_FUNCTION_FOUND_IN_TEMPLATE = NO_FUNCTION_FOUND_IN_TEMPLATE;
 exports.NO_LOCATION_FOUND = NO_LOCATION_FOUND;
+exports.NO_TEXT_FOUND = NO_TEXT_FOUND;
 function NO_DATASET_FOUND(loc) {
     return new ReferenceError('No dataset found for ' + loc);
 }
@@ -21,4 +22,8 @@ function NO_FUNCTION_FOUND_IN_TEMPLATE(functionName, template) {
 
 function NO_LOCATION_FOUND() {
     return new ReferenceError('No location defined for this locale');
+}
+
+function NO_TEXT_FOUND() {
+    return new ReferenceError('No text defined for this locale');
 }

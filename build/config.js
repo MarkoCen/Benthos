@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.setLoc = setLoc;
+exports.locale = locale;
 exports.getDataSet = getDataSet;
 
 var _index = require('./datasets/index');
@@ -16,7 +16,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var location = 'en';
 
-function setLoc(loc) {
+function locale(loc) {
     if (!datasets[loc]) throw (0, _errors.NO_DATASET_FOUND)(loc);
     location = loc || 'en';
 }

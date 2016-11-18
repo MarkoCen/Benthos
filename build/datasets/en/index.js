@@ -13,9 +13,12 @@ var _firstNames_data = require('./firstNames_data');
 
 var _location_data = require('./location_data');
 
+var _text_data = require('./text_data');
+
 var en = exports.en = {
     gender: _gender_data.gender,
     lastNames: _lastNames_data.lastNames,
     firstNames: { male: _firstNames_data.male, female: _firstNames_data.female },
-    location: _location_data.location
+    location: _location_data.location,
+    text: _text_data.text
 };
