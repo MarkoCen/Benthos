@@ -2,7 +2,17 @@
  * Generates massive sample data in seconds
  * Works both on Browser and Node environment
  * Supports Generating data from template or schema
- 
+
+### Usage
+In Browser
+```html
+<script src="node_modules/benthos/dist/benthos.min.js"></script>
+
+<script>
+    var email = benthos.email();
+</script>
+```
+
 ### Generate simple data
 ```javascript
 import { fullName, email, url } from 'benthos';
