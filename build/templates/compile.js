@@ -7,7 +7,7 @@ exports.compile = compile;
 
 var _index = require('../functions/index');
 
-var funcs = _interopRequireWildcard(_index);
+var functions = _interopRequireWildcard(_index);
 
 var _errors = require('../utilities/errors');
 
@@ -21,22 +21,32 @@ function compile(template, scope) {
     scope = scope || {};
     if (typeof template != 'string') throw (0, _errors.INVALID_TEMPLATE)(template);
 
-    var commands = (0, _parser.tokenize)(template, scope);
+    var token = (0, _parser.tokenize)(template, scope);
 
-    commands.forEach(function (command) {
+    token.commands.forEach(function (command) {
         if (!command.skip) {
-            var _funcs$command$name;
 
-            if (!funcs[command.name]) throw (0, _errors.NO_FUNCTION_FOUND_IN_TEMPLATE)(command.name, template);
-            command.value = (_funcs$command$name = funcs[command.name]).call.apply(_funcs$command$name, [null].concat(_toConsumableArray(command.parameters)));
+            var ref = scope ? scope[command.name] || functions[command.name] : functions[command.name];
+
+            if (ref == null) throw (0, _errors.NO_FUNCTION_FOUND_IN_TEMPLATE)(command.name, template);
+
+            command.parameters.map(function (param) {
+                if (param.$$scopeVar) {
+                    return scope[param.name];
+                } else {
+                    return param;
+                }
+            });
+
+            command.value = typeof ref != 'function' ? ref.toString() : ref.call.apply(ref, [functions].concat(_toConsumableArray(command.parameters)));
         }
     });
 
-    return commands.length > 0 ? serialize(commands) : template;
+    return token.commands.length > 0 ? serialize(token.commands) : template;
 }
 
 var serialize = function serialize(commands) {
-    return commands.map(function (p) {
+    return (0, _parser.mapStrTypes)(commands.map(function (p) {
         return p.value;
-    }).join('');
+    }).join(''));
 };

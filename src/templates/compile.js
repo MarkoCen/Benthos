@@ -1,25 +1,43 @@
 'use strict';
 
-import * as funcs from '../functions/index';
+import * as functions from '../functions/index';
 import { INVALID_TEMPLATE, NO_FUNCTION_FOUND_IN_TEMPLATE } from '../utilities/errors';
-import { tokenize } from '../utilities/parser';
+import { tokenize, mapStrTypes } from '../utilities/parser';
 
 export function compile(template, scope){
     scope = scope || {};
     if(typeof template != 'string') throw INVALID_TEMPLATE(template);
 
-    let commands = tokenize(template, scope);
+    let token = tokenize(template, scope);
 
-    commands.forEach(command =>{
+    token.commands.forEach(command =>{
         if(!command.skip){
-            if(!funcs[command.name]) throw NO_FUNCTION_FOUND_IN_TEMPLATE(command.name, template);
-            command.value = funcs[command.name].call(null, ...command.parameters);
+
+            let ref = scope ?
+                scope[command.name] || functions[command.name]
+                : functions[command.name];
+
+            if(ref == null)
+                throw NO_FUNCTION_FOUND_IN_TEMPLATE(command.name, template);
+
+            command.parameters.map(param=>{
+                if(param.$$scopeVar){
+                    return scope[param.name];
+                }else{
+                    return param;
+                }
+            });
+
+            command.value = typeof ref != 'function' ?
+                ref.toString()
+                : ref.call(functions, ...command.parameters);
+
         }
     });
 
-    return commands.length > 0 ? serialize(commands) : template;
+    return token.commands.length > 0 ? serialize(token.commands) : template;
 }
 
 const serialize = (commands) =>{
-    return commands.map(p=>p.value).join('');
+    return mapStrTypes(commands.map(p=>p.value).join(''));
 };

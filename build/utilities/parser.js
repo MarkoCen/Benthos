@@ -3,16 +3,25 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.mapStrTypes = mapStrTypes;
 exports.parseFormat = parseFormat;
 exports.tokenize = tokenize;
-var convertStr = function convertStr(str, scope) {
+var convertStr = function convertStr(str) {
     if (str == null) return str;
     if (str === 'true') return true;
     if (str === 'false') return false;
     if (!isNaN(str)) return +str;
-    if (scope[str]) return scope[str];
-    return str.toString();
+    if (/".*"/.test(str)) return str.substring(1, str.length - 1);
+    return { $$scopeVar: true, name: str };
 };
+
+function mapStrTypes(str) {
+    if (str == null) return str;
+    if (str === 'true') return true;
+    if (str === 'false') return false;
+    if (!isNaN(str)) return +str;
+    return str.toString();
+}
 
 function parseFormat(formatStr) {
     if (formatStr == undefined) return 10;
@@ -28,7 +37,7 @@ function parseFormat(formatStr) {
     }
 };
 
-function tokenize(template, scope) {
+function tokenize(template) {
     var regex = /#\{(.*?)}/g;
     var commands = [];
     var m = void 0;
@@ -39,7 +48,7 @@ function tokenize(template, scope) {
             regex.lastIndex++;
         }
         if (m[1]) {
-            commands.push({
+            if (p != m.index) commands.push({
                 value: template.substring(p, m.index),
                 skip: true
             });
@@ -51,7 +60,7 @@ function tokenize(template, scope) {
             commands.push({
                 name: name ? name[1] : '',
                 parameters: params ? (params[1] || '').trim().split(',').map(function (p) {
-                    return convertStr(p.trim(), scope);
+                    return convertStr(p.trim());
                 }) : []
             });
         }
@@ -62,5 +71,5 @@ function tokenize(template, scope) {
         skip: true
     });
 
-    return commands;
-};
+    return { $$bsToken: true, commands: commands };
+}

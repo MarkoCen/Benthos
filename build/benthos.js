@@ -39,3 +39,15 @@ Object.keys(_compile).forEach(function (key) {
     }
   });
 });
+
+var _schema = require('./templates/schema');
+
+Object.keys(_schema).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _schema[key];
+    }
+  });
+});

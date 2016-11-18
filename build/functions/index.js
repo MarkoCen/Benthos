@@ -183,3 +183,15 @@ Object.keys(_address).forEach(function (key) {
     }
   });
 });
+
+var _extend = require('./extend');
+
+Object.keys(_extend).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _extend[key];
+    }
+  });
+});

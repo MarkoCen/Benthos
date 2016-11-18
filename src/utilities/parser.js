@@ -1,11 +1,19 @@
 'use strict';
 
-const convertStr = (str, scope) => {
+const convertStr = (str) => {
     if(str == null) return str;
     if(str === 'true') return true;
     if(str === 'false') return false;
     if(!isNaN(str)) return +str;
-    if(scope[str]) return scope[str];
+    if(/".*"/.test(str)) return str.substring(1, str.length - 1);
+    return { $$scopeVar: true, name: str };
+}
+
+export function mapStrTypes(str){
+    if(str == null) return str;
+    if(str === 'true') return true;
+    if(str === 'false') return false;
+    if(!isNaN(str)) return +str;
     return str.toString();
 }
 
@@ -20,7 +28,7 @@ export function parseFormat(formatStr){
     }
 };
 
-export function tokenize(template, scope){
+export function tokenize(template){
     let regex = /#\{(.*?)}/g;
     let commands = [];
     let m;
@@ -31,10 +39,11 @@ export function tokenize(template, scope){
             regex.lastIndex++;
         }
         if(m[1]){
-            commands.push({
-                value: template.substring(p, m.index),
-                skip: true
-            });
+            if(p != m.index)
+                commands.push({
+                    value: template.substring(p, m.index),
+                    skip: true
+                });
             p = m.index + m[0].length;
             let match = m[1];
             let command = match.trim();
@@ -45,7 +54,7 @@ export function tokenize(template, scope){
                 parameters: params ? (params[1] || '')
                     .trim()
                     .split(',')
-                    .map(p=> { return convertStr(p.trim(), scope) })
+                    .map(p=> { return convertStr(p.trim()) })
                     : []
             });
         }
@@ -57,5 +66,5 @@ export function tokenize(template, scope){
             skip: true
         });
 
-    return commands;
-};
+    return { $$bsToken: true, commands };
+}
