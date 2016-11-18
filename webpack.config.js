@@ -11,7 +11,8 @@ module.exports = {
         filename: '[name].js',
         path: 'dist/',
         sourceMapFilename: '[file].map',
-        library: 'benthos'
+        library: 'benthos',
+        libraryTarget: 'umd'
     },
     devtool: "source-map",
     plugins: [
