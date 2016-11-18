@@ -7,10 +7,21 @@
 In Browser
 ```html
 <script src="node_modules/benthos/dist/benthos.min.js"></script>
-
 <script>
+
     var email = benthos.email();
+
 </script>
+```
+In CommonJS
+```javascript
+const benthos = require('benthos');
+const email = benthos.email();
+```
+In ES2015 Modules
+```javascript
+import * as benthos from 'benthos'
+const email = benthos.email();
 ```
 
 ### Generate simple data
