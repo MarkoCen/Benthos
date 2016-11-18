@@ -2,7 +2,7 @@
   "name": "benthos",
   "version": "0.1.0",
   "description": "ES2015 test data generator",
-  "main": "index.js",
+  "main": "build/benthos.js",
   "dependencies": {
     "lodash.foreach": "^4.5.0",
     "random-js": "^1.0.8"
