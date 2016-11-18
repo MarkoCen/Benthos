@@ -4,7 +4,7 @@ const benthos = require('../build/benthos');
 const chai = require('chai');
 const expect = chai.expect;
 
-describe('functions', ()=>{
+describe('String', ()=>{
     describe('string()', ()=>{
         it('should generate random string', ()=>{
            let sample = benthos.string();
@@ -20,5 +20,14 @@ describe('functions', ()=>{
             let sample = benthos.string(55);
             expect(sample.length).to.equal(55);
         })
+    })
+
+    describe('md5()', ()=>{
+
+        it('should generate a md5 string for given string', ()=>{
+            let md5 = benthos.md5('hello');
+            expect(md5).to.equal('5d41402abc4b2a76b9719d911017c592');
+        })
+
     })
 });

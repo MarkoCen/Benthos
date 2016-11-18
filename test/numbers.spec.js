@@ -53,4 +53,22 @@ describe('Number', ()=>{
 
     })
 
+    describe('uuid()', ()=>{
+
+        it('should generate RFC v4 uuid', ()=>{
+            let uuid = benthos.uuid(); //xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
+            expect(uuid).to.match(/[0-9a-z]{8}-[0-9a-z]{4}-4[0-9a-z]{3}-[0-9a-z]{4}-[0-9a-z]{12}/);
+        })
+
+    })
+
+    describe('hash()', ()=>{
+
+        it('should generate hash id for given string', ()=>{
+            let hash = benthos.hash('hello'); //xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
+            expect(hash).to.equal(99162322);
+        })
+
+    })
+
 })

@@ -23,16 +23,10 @@ describe('random', ()=>{
         })
     })
 
-});
-
-describe('extend', ()=>{
-
-    it('should extend benthos methods', ()=>{
-        benthos.extend('five', () => {
-            return this.integer(0, 5);
+    describe('boolean()', ()=>{
+        it('should return true or false', ()=>{
+            expect(benthos.boolean()).to.be.oneOf([true, false])
         })
-        let num = benthos.compile('#{five}');
-        expect(num).to.be.within(0, 5);
     })
 
 });

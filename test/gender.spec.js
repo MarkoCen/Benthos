@@ -15,13 +15,13 @@ describe('functions', ()=>{
         })
 
         it('should return chinese gender string if locale is cn', ()=>{
-            benthos.setLoc('cn');
+            benthos.locale('cn');
             expect(benthos.gender(false)).to.be.oneOf(['男', '女']);
-            benthos.setLoc('en');
+            benthos.locale('en');
         })
 
         it('should throw error if no locale found', ()=>{
-            expect(benthos.setLoc.bind(null, 'Mars')).to.throw(Error);
+            expect(benthos.locale.bind(null, 'Mars')).to.throw(Error);
         })
     })
 });

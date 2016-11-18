@@ -30,7 +30,7 @@ describe('Contacts', ()=>{
     describe('address()', ()=>{
         it('should generate a full address which include street, city, country and zip code', ()=>{
             let address = benthos.address();
-            expect(/[0-9]{3}\s[a-zA-Z]{7}\s\w+,\s\w+,\s\w+\s[0-9]{6}/.test(address)).to.equal(true);
+            expect(/[0-9]{3}\s[a-zA-Z]{7}\s.*\s[0-9]{6}/.test(address)).to.equal(true);
         })
     })
 
