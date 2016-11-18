@@ -4,6 +4,7 @@
   "description": "ES2015 test data generator",
   "main": "build/benthos.js",
   "dependencies": {
+    "identicon.js": "^1.3.0",
     "lodash.foreach": "^4.5.0",
     "random-js": "^1.0.8"
   },
@@ -17,7 +18,7 @@
   "scripts": {
     "build": "rm -rf build && mkdir build && babel src -d build -w",
     "test": "mocha -R nyan -w -c",
-    "bundle": "rm -rf dist && mkdir dist && webpack"
+    "release": "rm -rf dist build && mkdir build dist && babel src -d build && webpack"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,10 @@
     "data",
     "test"
   ],
-  "author": "Marko Cen",
+  "author": {
+    "name": "marko",
+    "email": "markocen@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MarkoCen/Benthos/issues"
