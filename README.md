@@ -20,8 +20,8 @@ const email = benthos.email();
 ```
 In ES2015 Modules
 ```javascript
-import * as benthos from 'benthos'
-const email = benthos.email();
+import { email } from 'benthos'
+const email = email();
 ```
 
 ### Generate simple data
