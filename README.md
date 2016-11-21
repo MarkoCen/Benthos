@@ -38,7 +38,7 @@ let url = url({ host: 'markocen.com', path: 'blog' }) // http://markocen.com/blo
 import { compile } from 'benthos';
 
 // bio = 'Hello, my name is Marko Cen, I'm from China'
-let bio = compile('Hello, my name is #{fullName}, I\'m from #{country}');
+let bio = compile('Hello, my name is {{ fullName }}, I\'m from {{ country }}');
 ```
 
 ### Generate data from schema
