@@ -46,9 +46,9 @@ let bio = compile('Hello, my name is {{ fullName }}, I\'m from {{ country }}');
 import { schema } from 'benthos';
 
 const ProfileSchema = schema({
-    name: '#{fullName}',
-    age: '#{getAge}',
-    gender: '#{gender(false)}'
+    name: '{{fullName}}',
+    age: '{{getAge}}',
+    gender: '{{gender(false)}}'
 })
 
 // profileData = {
