@@ -1,6 +1,6 @@
 {
   "name": "benthos",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ES2015 test data generator",
   "main": "build/benthos.js",
   "dependencies": {
