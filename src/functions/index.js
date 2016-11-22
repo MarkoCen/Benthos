@@ -21,6 +21,7 @@ export * from './street';
 export * from './country';
 export * from './address';
 export * from './identicon';
+export * from './image';
 
 export * from './date';
 export * from './dateIn';

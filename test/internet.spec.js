@@ -37,6 +37,13 @@ describe('Internet', ()=>{
         })
     })
 
+    describe('image()', ()=>{
+        it('should return a random image from unsplash.it', ()=>{
+            let image = benthos.image(300, 400);
+            expect(image).to.match(/https:\/\/unsplash.it\/300\/400\/\?random/);
+        })
+    })
+
     describe('url()', ()=>{
 
         it('should return random url by default', ()=>{

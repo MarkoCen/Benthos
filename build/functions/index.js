@@ -244,6 +244,18 @@ Object.keys(_identicon).forEach(function (key) {
   });
 });
 
+var _image = require('./image');
+
+Object.keys(_image).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _image[key];
+    }
+  });
+});
+
 var _date = require('./date');
 
 Object.keys(_date).forEach(function (key) {
