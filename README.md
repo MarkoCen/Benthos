@@ -20,8 +20,8 @@ const email = benthos.email();
 ```
 In ES2015 Modules
 ```javascript
-import * as benthos from 'benthos'
-const email = benthos.email();
+import { email } from 'benthos'
+const email = email();
 ```
 
 ### Generate simple data
@@ -38,7 +38,7 @@ let url = url({ host: 'markocen.com', path: 'blog' }) // http://markocen.com/blo
 import { compile } from 'benthos';
 
 // bio = 'Hello, my name is Marko Cen, I'm from China'
-let bio = compile('Hello, my name is #{fullName}, I\'m from #{country}');
+let bio = compile('Hello, my name is {{ fullName }}, I\'m from {{ country }}');
 ```
 
 ### Generate data from schema
@@ -46,9 +46,9 @@ let bio = compile('Hello, my name is #{fullName}, I\'m from #{country}');
 import { schema } from 'benthos';
 
 const ProfileSchema = schema({
-    name: '#{fullName}',
-    age: '#{getAge}',
-    gender: '#{gender(false)}'
+    name: '{{fullName}}',
+    age: '{{getAge}}',
+    gender: '{{gender(false)}}'
 })
 
 // profileData = {
