@@ -38,7 +38,7 @@ function parseFormat(formatStr) {
 };
 
 function tokenize(template) {
-    var regex = /#\{(.*?)}/g;
+    var regex = /\{\{(.*?)}}/g;
     var commands = [];
     var m = void 0;
     var p = 0;

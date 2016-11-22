@@ -7,18 +7,18 @@ const expect = chai.expect;
 describe('templates', ()=>{
     describe('compile()', ()=>{
         it('should interpret template ', ()=>{
-            expect(benthos.compile('I am a #{gender}. Thanks')).to.be.oneOf(['I am a Male. Thanks', 'I am a Female. Thanks']);
+            expect(benthos.compile('I am a {{gender}}. Thanks')).to.be.oneOf(['I am a Male. Thanks', 'I am a Female. Thanks']);
         })
 
         it('could pass parameters into template', ()=>{
-            expect(benthos.compile('Gender is #{gender(true)}')).to.be.oneOf([
+            expect(benthos.compile('Gender is {{gender(true)}}')).to.be.oneOf([
                 'Gender is 0',
                 'Gender is 1'
             ])
         })
 
         it('should support scope variables and functions', ()=>{
-            let template = benthos.compile('#{hisName("Shan")} is #{gender(val)}', {
+            let template = benthos.compile('{{hisName("Shan")}} is {{gender(val)}}', {
                 val: true,
                 hisName: function (lastName) {
                     return `${this.firstName(1)} ${lastName}`
@@ -31,8 +31,8 @@ describe('templates', ()=>{
     describe('schema()', ()=>{
         it('should interpret template ', ()=>{
             let User = benthos.schema({
-                age: '#{integer(20, 25)}',
-                gender: '#{gender}',
+                age: '{{integer(20, 25)}}',
+                gender: '{{gender}}',
                 name: 'Smith'
             });
             let user = User();
@@ -43,9 +43,9 @@ describe('templates', ()=>{
 
         it('should support scope variables and functions', ()=>{
             let User = benthos.schema({
-                age: '#{twentyFive}',
-                name: '#{myName("Smith")}',
-                bio: 'I am from #{country}'
+                age: '{{twentyFive}}',
+                name: '{{myName("Smith")}}',
+                bio: 'I am from {{country}}'
             });
             let user = User({
                 twentyFive: 25,

@@ -29,7 +29,7 @@ export function parseFormat(formatStr){
 };
 
 export function tokenize(template){
-    let regex = /#\{(.*?)}/g;
+    let regex = /\{\{(.*?)}}/g;
     let commands = [];
     let m;
     let p = 0;
