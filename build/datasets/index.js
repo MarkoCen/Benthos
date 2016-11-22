@@ -15,15 +15,3 @@ Object.keys(_index).forEach(function (key) {
     }
   });
 });
-
-var _index2 = require('./cn/index');
-
-Object.keys(_index2).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _index2[key];
-    }
-  });
-});
