@@ -3,6 +3,11 @@
  * Works both on Browser and Node environment
  * Supports Generating data from template or schema
 
+### Install
+```bash
+npm install benthos
+```
+
 ### Usage
 In Browser
 ```html
