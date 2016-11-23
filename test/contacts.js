@@ -15,7 +15,7 @@ describe('Contacts', ()=>{
 
     describe('phone()', ()=>{
         it('should generate a random phone number based on provided format', ()=>{
-            let phone = benthos.phone('139-XXX-XXXX');
+            let phone = benthos.phone('139-***-****');
             expect(/139-[0-9]{3}-[0-9]{4}/.test(phone)).to.equal(true);
         })
     })
