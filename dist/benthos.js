@@ -2340,7 +2340,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    hashStr = hashStr || (0, _hash.hash)();
 	    size = size || 200;
 	
-	    var base64 = new _identicon2.default(hashStr, size).toString();
+	    var base64 = new _identicon2.default(hashStr.toString(), size).toString();
 	
 	    return 'data:image/png;base64,' + base64;
 	}
