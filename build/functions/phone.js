@@ -8,8 +8,8 @@ exports.phone = phone;
 var _string = require('./string');
 
 function phone(format) {
-    var r = /(X+)/g;
-    format = format || '(XXX)XXX-XXXX';
+    var r = /(\*+)/g;
+    format = format || '(***)***-****';
     return format.replace(r, function (match) {
         return (0, _string.string)(match.length, '[0-9]');
     });

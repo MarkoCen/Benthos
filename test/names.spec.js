@@ -44,7 +44,7 @@ describe('Names', ()=>{
 
     })
 
-    describe('fullName()', ()=>{
+    describe('name()', ()=>{
 
         let maleFirstNames = require('../build/datasets/en/firstNames_data').male;
         let femaleFirstNames = require('../build/datasets/en/firstNames_data').female;
@@ -52,10 +52,10 @@ describe('Names', ()=>{
 
         it('should pick a boy full name if gender is 1', ()=>{
 
-            let fullName = benthos.fullName(1).split(' ');
+            let name = benthos.name(1).split(' ');
 
-            expect(fullName[0]).to.be.oneOf(maleFirstNames);
-            expect(fullName[1]).to.be.oneOf(lastNames);
+            expect(name[0]).to.be.oneOf(maleFirstNames);
+            expect(name[1]).to.be.oneOf(lastNames);
 
         })
 

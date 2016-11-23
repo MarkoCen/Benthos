@@ -3,6 +3,6 @@
 import { firstName } from './firstName';
 import { lastName } from './lastName';
 
-export function fullName(gender) {
+export function name(gender) {
     return `${firstName(gender)} ${lastName()}`;
 }

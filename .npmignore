@@ -1,5 +1,6 @@
 test/
 src/
+docs/
 .gitignore
 .babelrc
 webpack.config.js

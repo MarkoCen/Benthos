@@ -1,5 +1,5 @@
 export let text = [
-    "Lorem",
+    "lorem",
     "ipsum",
     "dolor",
     "sit",

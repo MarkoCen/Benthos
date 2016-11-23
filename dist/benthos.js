@@ -84,7 +84,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _compile = __webpack_require__(41);
+	var _compile = __webpack_require__(44);
 	
 	Object.keys(_compile).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _schema = __webpack_require__(42);
+	var _schema = __webpack_require__(45);
 	
 	Object.keys(_schema).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -252,7 +252,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	var text = exports.text = ["Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Duis", "venenatis", "non", "sapien", "sed", "rhoncus", "Ut", "sagittis", "dictum", "dignissim", "Proin", "iaculis", "egestas", "tortor", "vel", "venenatis", "turpis", "luctus", "sodales", "Praesent", "ullamcorper", "maximus", "arcu", "in", "tincidunt", "Phasellus", "sagittis", "ex", "et", "tincidunt", "interdum", "Pellentesque", "a", "accumsan", "diam", "Maecenas", "nisi", "justo", "laoreet", "non", "velit", "et", "placerat", "molestie", "nisi", "Integer", "consectetur", "pellentesque", "sem", "Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Donec", "ut", "blandit", "dui", "Nunc", "ultricies", "odio", "quis", "varius", "gravida", "felis", "nisi", "vehicula", "elit", "vel", "porttitor", "nibh", "urna", "non", "nulla", "Morbi", "venenatis", "ut", "tortor", "quis", "luctus", "Phasellus", "varius", "odio", "lectus", "ut", "auctor", "lectus", "cursus", "at", "Curabitur", "gravida", "massa", "vel", "orci", "dignissim", "eget", "varius", "elit", "blandit", "In", "ut", "diam", "ante", "Duis", "leo", "dolor", "sollicitudin", "nec", "massa", "vitae", "scelerisque", "venenatis", "velit", "Phasellus", "sit", "amet", "nunc", "condimentum", "condimentum", "purus", "in", "accumsan", "neque", "Vivamus", "condimentum", "arcu", "ex", "sit", "amet", "blandit", "eros", "eleifend", "in", "Vestibulum", "lacinia", "ex", "aliquet", "suscipit", "egestas", "In", "in", "nisl", "nec", "felis", "facilisis", "maximus", "Morbi", "fermentum", "odio", "varius", "finibus", "dui", "sit", "amet", "finibus", "odio", "Morbi", "quis", "purus", "pretium", "bibendum", "lacus", "a", "molestie", "tellus", "Donec", "enim", "nulla", "porttitor", "in", "efficitur", "viverra", "commodo", "feugiat", "ante", "Fusce", "id", "ornare", "risus", "Etiam", "volutpat", "elit", "diam", "vel", "aliquam", "velit", "finibus", "quis", "Cras"];
+	var text = exports.text = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Duis", "venenatis", "non", "sapien", "sed", "rhoncus", "Ut", "sagittis", "dictum", "dignissim", "Proin", "iaculis", "egestas", "tortor", "vel", "venenatis", "turpis", "luctus", "sodales", "Praesent", "ullamcorper", "maximus", "arcu", "in", "tincidunt", "Phasellus", "sagittis", "ex", "et", "tincidunt", "interdum", "Pellentesque", "a", "accumsan", "diam", "Maecenas", "nisi", "justo", "laoreet", "non", "velit", "et", "placerat", "molestie", "nisi", "Integer", "consectetur", "pellentesque", "sem", "Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Donec", "ut", "blandit", "dui", "Nunc", "ultricies", "odio", "quis", "varius", "gravida", "felis", "nisi", "vehicula", "elit", "vel", "porttitor", "nibh", "urna", "non", "nulla", "Morbi", "venenatis", "ut", "tortor", "quis", "luctus", "Phasellus", "varius", "odio", "lectus", "ut", "auctor", "lectus", "cursus", "at", "Curabitur", "gravida", "massa", "vel", "orci", "dignissim", "eget", "varius", "elit", "blandit", "In", "ut", "diam", "ante", "Duis", "leo", "dolor", "sollicitudin", "nec", "massa", "vitae", "scelerisque", "venenatis", "velit", "Phasellus", "sit", "amet", "nunc", "condimentum", "condimentum", "purus", "in", "accumsan", "neque", "Vivamus", "condimentum", "arcu", "ex", "sit", "amet", "blandit", "eros", "eleifend", "in", "Vestibulum", "lacinia", "ex", "aliquet", "suscipit", "egestas", "In", "in", "nisl", "nec", "felis", "facilisis", "maximus", "Morbi", "fermentum", "odio", "varius", "finibus", "dui", "sit", "amet", "finibus", "odio", "Morbi", "quis", "purus", "pretium", "bibendum", "lacus", "a", "molestie", "tellus", "Donec", "enim", "nulla", "porttitor", "in", "efficitur", "viverra", "commodo", "feugiat", "ante", "Fusce", "id", "ornare", "risus", "Etiam", "volutpat", "elit", "diam", "vel", "aliquam", "velit", "finibus", "quis", "Cras"];
 
 /***/ },
 /* 9 */
@@ -346,6 +346,42 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
+	var _image = __webpack_require__(19);
+	
+	Object.keys(_image).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _image[key];
+	    }
+	  });
+	});
+	
+	var _tag = __webpack_require__(20);
+	
+	Object.keys(_tag).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _tag[key];
+	    }
+	  });
+	});
+	
+	var _color = __webpack_require__(22);
+	
+	Object.keys(_color).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _color[key];
+	    }
+	  });
+	});
+	
 	var _string = __webpack_require__(16);
 	
 	Object.keys(_string).forEach(function (key) {
@@ -358,7 +394,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _integer = __webpack_require__(19);
+	var _integer = __webpack_require__(23);
 	
 	Object.keys(_integer).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -370,7 +406,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _float = __webpack_require__(21);
+	var _float = __webpack_require__(25);
 	
 	Object.keys(_float).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -382,7 +418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _boolean = __webpack_require__(22);
+	var _boolean = __webpack_require__(26);
 	
 	Object.keys(_boolean).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -394,7 +430,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _uuid = __webpack_require__(23);
+	var _uuid = __webpack_require__(27);
 	
 	Object.keys(_uuid).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -406,7 +442,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _hash = __webpack_require__(24);
+	var _hash = __webpack_require__(28);
 	
 	Object.keys(_hash).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -418,7 +454,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _md = __webpack_require__(25);
+	var _md = __webpack_require__(29);
 	
 	Object.keys(_md).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -430,19 +466,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _fullName = __webpack_require__(26);
+	var _serial = __webpack_require__(30);
 	
-	Object.keys(_fullName).forEach(function (key) {
+	Object.keys(_serial).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
 	  Object.defineProperty(exports, key, {
 	    enumerable: true,
 	    get: function get() {
-	      return _fullName[key];
+	      return _serial[key];
 	    }
 	  });
 	});
 	
-	var _firstName = __webpack_require__(27);
+	var _name = __webpack_require__(31);
+	
+	Object.keys(_name).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _name[key];
+	    }
+	  });
+	});
+	
+	var _firstName = __webpack_require__(32);
 	
 	Object.keys(_firstName).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -454,7 +502,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _lastName = __webpack_require__(28);
+	var _lastName = __webpack_require__(33);
 	
 	Object.keys(_lastName).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -466,7 +514,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _gender = __webpack_require__(29);
+	var _gender = __webpack_require__(34);
 	
 	Object.keys(_gender).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -478,7 +526,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _phone = __webpack_require__(30);
+	var _phone = __webpack_require__(35);
 	
 	Object.keys(_phone).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -490,7 +538,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _street = __webpack_require__(31);
+	var _street = __webpack_require__(36);
 	
 	Object.keys(_street).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -502,7 +550,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _country = __webpack_require__(32);
+	var _country = __webpack_require__(37);
 	
 	Object.keys(_country).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -514,7 +562,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _address = __webpack_require__(33);
+	var _address = __webpack_require__(38);
 	
 	Object.keys(_address).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -526,7 +574,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _identicon = __webpack_require__(34);
+	var _identicon = __webpack_require__(39);
 	
 	Object.keys(_identicon).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -538,19 +586,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _image = __webpack_require__(37);
-	
-	Object.keys(_image).forEach(function (key) {
-	  if (key === "default" || key === "__esModule") return;
-	  Object.defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _image[key];
-	    }
-	  });
-	});
-	
-	var _date = __webpack_require__(38);
+	var _date = __webpack_require__(42);
 	
 	Object.keys(_date).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -562,7 +598,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _dateIn = __webpack_require__(39);
+	var _dateIn = __webpack_require__(43);
 	
 	Object.keys(_dateIn).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -574,14 +610,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	});
 	
-	var _color = __webpack_require__(40);
+	var _domain = __webpack_require__(17);
 	
-	Object.keys(_color).forEach(function (key) {
+	Object.keys(_domain).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
 	  Object.defineProperty(exports, key, {
 	    enumerable: true,
 	    get: function get() {
-	      return _color[key];
+	      return _domain[key];
+	    }
+	  });
+	});
+	
+	var _words = __webpack_require__(21);
+	
+	Object.keys(_words).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _words[key];
 	    }
 	  });
 	});
@@ -1401,7 +1449,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _domain = __webpack_require__(17);
 	
 	function email(d) {
-	    return (0, _string.string)(10) + '@' + (d ? d : (0, _domain.domain)());
+	    return (0, _string.string)(10, '[0-9a-zA-Z]') + '@' + (d ? d : (0, _domain.domain)());
 	}
 
 /***/ },
@@ -1529,11 +1577,147 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.image = image;
+	
+	var _string = __webpack_require__(16);
+	
+	var IMAGE_HREF = 'https://unsplash.it';
+	
+	function image() {
+	    var w = void 0,
+	        h = void 0;
+	    var id = (0, _string.string)(10, '[a-zA-Z0-9]');
+	    if (arguments.length == 0) {
+	        w = h = 500;
+	    } else if (arguments.length == 1) {
+	        w = h = parseInt(arguments.length <= 0 ? undefined : arguments[0], 10);
+	    } else {
+	        w = parseInt(arguments.length <= 0 ? undefined : arguments[0], 10);
+	        h = parseInt(arguments.length <= 1 ? undefined : arguments[1], 10);
+	    }
+	
+	    return IMAGE_HREF + '/' + w + '/' + h + '/?random&id=' + id;
+	}
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.tag = tag;
+	
+	var _words = __webpack_require__(21);
+	
+	function tag(symbol) {
+	    symbol = symbol || '#';
+	    return '' + symbol + (0, _words.words)(1);
+	}
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.words = words;
+	
+	var _config = __webpack_require__(1);
+	
+	var _random = __webpack_require__(12);
+	
+	var _errors = __webpack_require__(9);
+	
+	function words(count) {
+	    count = count || 10;
+	
+	    var dataSet = (0, _config.getDataSet)();
+	    if (!dataSet.text) throw (0, _errors.NO_TEXT_FOUND)();
+	
+	    var w = (0, _random.pick)(dataSet.text, count);
+	    return w.join(' ');
+	}
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.color = color;
+	
+	var _random = __webpack_require__(12);
+	
+	var rgbToHsl = function rgbToHsl(r, g, b) {
+	    var min = Math.min(r, g, b),
+	        max = Math.max(r, g, b),
+	        delta = max - min,
+	        h = void 0,
+	        s = void 0,
+	        v = max;
+	
+	    v = Math.floor(max / 255 * 100);
+	    if (max != 0) s = Math.floor(delta / max * 100);else return [0, 0, 0];
+	
+	    if (r == max) h = (g - b) / delta;else if (g == max) h = 2 + (b - r) / delta;else h = 4 + (r - g) / delta;
+	
+	    h = Math.floor(h * 60);
+	    if (h < 0) h += 360;
+	
+	    return [h, s, v];
+	};
+	
+	var getHexNumber = function getHexNumber(c) {
+	    var hex = c.toString(16);
+	    return hex.length == 1 ? "0" + hex : hex;
+	};
+	
+	var rgbToHex = function rgbToHex(r, g, b) {
+	    return '#' + (getHexNumber(r) + getHexNumber(g) + getHexNumber(b));
+	};
+	
+	function color(format) {
+	    var r = (0, _random.number)(0, 256);
+	    var g = (0, _random.number)(0, 256);
+	    var b = (0, _random.number)(0, 256);
+	
+	    switch (format) {
+	        case 'rgb':
+	            return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+	        case 'hsl':
+	            {
+	                var hsl = rgbToHsl(r, g, b);
+	                return 'hsl(' + hsl[0] + '%, ' + hsl[1] + '%, ' + hsl[2] + '%)';
+	            }
+	        case 'hex':
+	        default:
+	            return rgbToHex(r, g, b);
+	    }
+	}
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	exports.integer = integer;
 	
 	var _random = __webpack_require__(12);
 	
-	var _parser = __webpack_require__(20);
+	var _parser = __webpack_require__(24);
 	
 	function integer() {
 	
@@ -1559,7 +1743,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 20 */
+/* 24 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1639,7 +1823,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 21 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1651,7 +1835,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _random = __webpack_require__(12);
 	
-	var _parser = __webpack_require__(20);
+	var _parser = __webpack_require__(24);
 	
 	function float() {
 	
@@ -1670,7 +1854,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 22 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1687,7 +1871,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 23 */
+/* 27 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1705,7 +1889,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 24 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1733,7 +1917,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 25 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1917,7 +2101,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//}
 
 /***/ },
-/* 26 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1925,18 +2109,48 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.fullName = fullName;
+	exports.serial = serial;
 	
-	var _firstName = __webpack_require__(27);
+	var _string = __webpack_require__(16);
 	
-	var _lastName = __webpack_require__(28);
+	function serial() {
+	    var format = '***-**-****',
+	        regex = '[0-9]',
+	        r = /(\*+)/g;
 	
-	function fullName(gender) {
+	    if (arguments.length == 1) {
+	        format = arguments.length <= 0 ? undefined : arguments[0];
+	    } else if (arguments.length > 1) {
+	        format = arguments.length <= 0 ? undefined : arguments[0];
+	        regex = arguments.length <= 1 ? undefined : arguments[1];
+	    }
+	
+	    return format.replace(r, function (match) {
+	        return (0, _string.string)(match.length, regex);
+	    });
+	}
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.name = name;
+	
+	var _firstName = __webpack_require__(32);
+	
+	var _lastName = __webpack_require__(33);
+	
+	function name(gender) {
 	    return (0, _firstName.firstName)(gender) + ' ' + (0, _lastName.lastName)();
 	}
 
 /***/ },
-/* 27 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1958,7 +2172,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 28 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1978,7 +2192,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 29 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2002,7 +2216,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 30 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2015,15 +2229,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _string = __webpack_require__(16);
 	
 	function phone(format) {
-	    var r = /(X+)/g;
-	    format = format || '(XXX)XXX-XXXX';
+	    var r = /(\*+)/g;
+	    format = format || '(***)***-****';
 	    return format.replace(r, function (match) {
 	        return (0, _string.string)(match.length, '[0-9]');
 	    });
 	}
 
 /***/ },
-/* 31 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2055,7 +2269,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 32 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2078,7 +2292,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 33 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2090,9 +2304,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _string = __webpack_require__(16);
 	
-	var _street = __webpack_require__(31);
+	var _street = __webpack_require__(36);
 	
-	var _country = __webpack_require__(32);
+	var _country = __webpack_require__(37);
 	
 	function address() {
 	    var st = (0, _street.street)();
@@ -2104,7 +2318,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 34 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2114,11 +2328,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.identicon = identicon;
 	
-	var _identicon = __webpack_require__(35);
+	var _identicon = __webpack_require__(40);
 	
 	var _identicon2 = _interopRequireDefault(_identicon);
 	
-	var _hash = __webpack_require__(24);
+	var _hash = __webpack_require__(28);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -2132,7 +2346,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 35 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -2150,7 +2364,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	(function() {
 	    var PNGlib;
 	    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	        PNGlib = __webpack_require__(36);
+	        PNGlib = __webpack_require__(41);
 	    } else {
 	        PNGlib = window.PNGlib;
 	    }
@@ -2282,7 +2496,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 36 */
+/* 41 */
 /***/ function(module, exports) {
 
 	/**
@@ -2502,38 +2716,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.image = image;
-	
-	var _string = __webpack_require__(16);
-	
-	var IMAGE_HREF = 'https://unsplash.it';
-	
-	function image() {
-	    var w = void 0,
-	        h = void 0;
-	    var id = (0, _string.string)(10, '[a-zA-Z0-9]');
-	    if (arguments.length == 0) {
-	        w = h = 500;
-	    } else if (arguments.length == 1) {
-	        w = h = parseInt(arguments.length <= 0 ? undefined : arguments[0], 10);
-	    } else {
-	        w = parseInt(arguments.length <= 0 ? undefined : arguments[0], 10);
-	        h = parseInt(arguments.length <= 1 ? undefined : arguments[1], 10);
-	    }
-	
-	    return IMAGE_HREF + '/' + w + '/' + h + '/?random&id=' + id;
-	}
-
-/***/ },
-/* 38 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2543,7 +2726,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.date = date;
 	
-	var _integer = __webpack_require__(19);
+	var _integer = __webpack_require__(23);
 	
 	function date() {
 	    var before = void 0,
@@ -2563,7 +2746,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 39 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2610,67 +2793,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 40 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.color = color;
-	
-	var _random = __webpack_require__(12);
-	
-	var rgbToHsl = function rgbToHsl(r, g, b) {
-	    var min = Math.min(r, g, b),
-	        max = Math.max(r, g, b),
-	        delta = max - min,
-	        h = void 0,
-	        s = void 0,
-	        v = max;
-	
-	    v = Math.floor(max / 255 * 100);
-	    if (max != 0) s = Math.floor(delta / max * 100);else return [0, 0, 0];
-	
-	    if (r == max) h = (g - b) / delta;else if (g == max) h = 2 + (b - r) / delta;else h = 4 + (r - g) / delta;
-	
-	    h = Math.floor(h * 60);
-	    if (h < 0) h += 360;
-	
-	    return [h, s, v];
-	};
-	
-	var getHexNumber = function getHexNumber(c) {
-	    var hex = c.toString(16);
-	    return hex.length == 1 ? "0" + hex : hex;
-	};
-	
-	var rgbToHex = function rgbToHex(r, g, b) {
-	    return '#' + (getHexNumber(r) + getHexNumber(g) + getHexNumber(b));
-	};
-	
-	function color(format) {
-	    var r = (0, _random.number)(0, 256);
-	    var g = (0, _random.number)(0, 256);
-	    var b = (0, _random.number)(0, 256);
-	
-	    switch (format) {
-	        case 'rgb':
-	            return 'rgb(' + r + ', ' + g + ', ' + b + ')';
-	        case 'hsl':
-	            {
-	                var hsl = rgbToHsl(r, g, b);
-	                return 'hsl(' + hsl[0] + '%, ' + hsl[1] + '%, ' + hsl[2] + '%)';
-	            }
-	        case 'hex':
-	        default:
-	            return rgbToHex(r, g, b);
-	    }
-	}
-
-/***/ },
-/* 41 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2686,7 +2809,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _errors = __webpack_require__(9);
 	
-	var _parser = __webpack_require__(20);
+	var _parser = __webpack_require__(24);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
@@ -2727,7 +2850,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 42 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2740,11 +2863,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	exports.schema = schema;
 	
-	var _lodash = __webpack_require__(43);
+	var _lodash = __webpack_require__(46);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
-	var _parser = __webpack_require__(20);
+	var _parser = __webpack_require__(24);
 	
 	var _errors = __webpack_require__(9);
 	
@@ -2866,7 +2989,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 43 */
+/* 46 */
 /***/ function(module, exports) {
 
 	/**

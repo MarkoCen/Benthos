@@ -4,5 +4,5 @@ import { string } from './string';
 import { domain } from './domain';
 
 export function email(d){
-    return `${string(10)}@${ d ? d : domain() }`
+    return `${string(10, '[0-9a-zA-Z]')}@${ d ? d : domain() }`
 }

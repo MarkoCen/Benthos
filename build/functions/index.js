@@ -52,6 +52,42 @@ Object.keys(_url).forEach(function (key) {
   });
 });
 
+var _image = require('./image');
+
+Object.keys(_image).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _image[key];
+    }
+  });
+});
+
+var _tag = require('./tag');
+
+Object.keys(_tag).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _tag[key];
+    }
+  });
+});
+
+var _color = require('./color');
+
+Object.keys(_color).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _color[key];
+    }
+  });
+});
+
 var _string = require('./string');
 
 Object.keys(_string).forEach(function (key) {
@@ -136,14 +172,26 @@ Object.keys(_md).forEach(function (key) {
   });
 });
 
-var _fullName = require('./fullName');
+var _serial = require('./serial');
 
-Object.keys(_fullName).forEach(function (key) {
+Object.keys(_serial).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
-      return _fullName[key];
+      return _serial[key];
+    }
+  });
+});
+
+var _name = require('./name');
+
+Object.keys(_name).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _name[key];
     }
   });
 });
@@ -244,18 +292,6 @@ Object.keys(_identicon).forEach(function (key) {
   });
 });
 
-var _image = require('./image');
-
-Object.keys(_image).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _image[key];
-    }
-  });
-});
-
 var _date = require('./date');
 
 Object.keys(_date).forEach(function (key) {
@@ -280,14 +316,26 @@ Object.keys(_dateIn).forEach(function (key) {
   });
 });
 
-var _color = require('./color');
+var _domain = require('./domain');
 
-Object.keys(_color).forEach(function (key) {
+Object.keys(_domain).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
-      return _color[key];
+      return _domain[key];
+    }
+  });
+});
+
+var _words = require('./words');
+
+Object.keys(_words).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _words[key];
     }
   });
 });

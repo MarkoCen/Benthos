@@ -10,5 +10,5 @@ var _string = require('./string');
 var _domain = require('./domain');
 
 function email(d) {
-    return (0, _string.string)(10) + '@' + (d ? d : (0, _domain.domain)());
+    return (0, _string.string)(10, '[0-9a-zA-Z]') + '@' + (d ? d : (0, _domain.domain)());
 }
