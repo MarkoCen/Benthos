@@ -3,7 +3,7 @@
  * Works both on Browser and Node environment
  * Supports Generating data from template or schema
 
-[Introduction](https://markocen.github.io/Benthos/index.html)
+[Introduction & API Reference](https://markocen.github.io/Benthos/index.html)
 
 ### Install
 ```bash
