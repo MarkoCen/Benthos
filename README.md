@@ -1,7 +1,9 @@
-# Benthos
+# <span style="color:#d9534f;">Benthos.js</span>
  * Generates massive sample data in seconds
  * Works both on Browser and Node environment
  * Supports Generating data from template or schema
+
+[Introduction](https://markocen.github.io/Benthos/index.html)
 
 ### Install
 ```bash
