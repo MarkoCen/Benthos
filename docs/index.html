@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+    <style>
+        .apis pre{ border: none;background-color: transparent;padding: 0;}
+        .apis .hljs{ background: none;}
+        .apis tr{ text-align: left;}
+    </style>
+</head>
+<body>
+    <div style="text-align: center" class="col col-sm-12">
+        <h1 class="text-danger">
+            <span class="fa fa-cog fa-spin" style="font-size: 40px"></span>
+            <span >Benthos.js</span>
+        </h1>
+        <h4 class="text-muted">ES2015 Rich Test Data Generator</h4>
+    </div>
+    <div style="text-align: justify;" class="col col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <h3 class="text-danger">Setup</h3>
+        <p>Install Benthos with NPM</p>
+        <pre><code class="bash">npm install benthos</code></pre>
+        <br>
+        <h3 class="text-danger">Usage</h3>
+        <p>Benthos written in ES2015, there are couple of ways using Benthos in your project.</p>
+        <p>In browser, include the bundle file which exposed a global variable <code>benthos</code>
+        </p>
+<pre><code class="html">&ltscript src="node_modules/benthos/dist/benthos.min.js"&gt&lt/script&gt
+&ltscript&gt
+    var email = benthos.email();
+&lt/script&gt
+</code></pre>
+        <p>In CommonJS, use <code>require</code></p>
+<pre><code class="javascript">var benthos = require('benthos');
+var email = benthos.email();
+</code></pre>
+        <p>With ES2015 module system</p>
+<pre><code>import { email } from 'benthos';
+let email = email();
+</code></pre>
+        <br>
+        <h3 class="text-danger">Guides</h3>
+        <h5>1. Generate data from template</h5>
+        <p>By using <code>compile</code>, you could generate data from templates, <code>compile</code> takes a handlebars-liked template string and return the compiled data for the given template, for example:</p>
+<pre><code class="javascript">import {compile} from 'benthos'
+
+const template = 'Hi! This is {{name}}, follow my on twitter {{tag("@")}}';
+
+// Hi! This is John Smith, follow me on twitter @djcivk
+let result = compile(template);
+</code></pre>
+        <p>As you can see, you could call the built-in APIs within the template, if no parameters provided (<code>{{name}}</code>), the compiler would try to parse the template with API default parameters</p>
+        <p>If you needed, you could also pass your own properties/functions into <code>compile</code>:</p>
+<pre><code class="javascript">import {compile} from 'benthos'
+
+const template = 'Hi! This is {{myName}}, here is my blog {{myBlog}}';
+
+// Hi! This is Marko, here is my blog http://markocen.com/blog
+let result = compile(template, {
+    myName: 'Marko',
+    myBlog: function(){
+        // all provided functions bind to benthos built-in APIs
+        return this.url({host: 'markocen.com', path: 'blog' })
+    }
+});
+</code></pre>
+        <br>
+        <h5>2. Generate complex data structure from schema</h5>
+        <p>Rather than simple data, <code>schema</code> method gives you the ability to generate much more complex data structures</p>
+        <p>For example, we would like to generate random user profiles, each profile should contain the following properties:</p>
+        <ul>
+            <li>ID</li>
+            <li>Name</li>
+            <li>Gender</li>
+            <li>Age</li>
+            <li>Address</li>
+            <li>Email</li>
+            <li>Phone</li>
+            <li>SSN</li>
+        </ul>
+        <p>We could build the user schema, and each time we want a new test user, we just need to call the schema</p>
+<pre><code class="javascript">import {schema} from 'benthos'
+
+const User = schema({
+    id: '{{uuid}}',
+    name: '{{name}}',
+    gender: '{{gender}}',
+    age: '{{integer(21, 100)}}',
+    address: '{{address}}',
+    email: '{{email("google.com")}}',
+    phone: '{{phone}}',
+    ssn: '{{serial(***-**-****)}}'
+})
+
+let user = User();
+</code></pre>
+        <p>When calling a schema, you could also provide your own properties/functions</p>
+<pre><code class="javascript">import {schema} from 'benthos'
+
+const Bio = schema({
+    bio: 'Hi! This is {{myName}}, here is my blog {{myBlog}}'
+})
+
+let myBio = Bio({
+    myName: 'Marko',
+    myBlog: function(){
+        // all provided functions bind to benthos built-in APIs
+        return this.url({host: 'markocen.com', path: 'blog' })
+    }
+});
+
+let amyBio = Bio({
+    myName: 'Amy',
+    myBlog: function(){
+        return this.url()
+    }
+});
+</code></pre>
+    </div>
+    <div class="col col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <h3 class="text-danger">API Reference</h3>
+        <div class="col col-sm-12 col-md-4 col-lg-3">
+            <h5>Basic</h5>
+            <ul>
+                <li><a href="#boolean">boolean</a></li>
+                <li><a href="#float">float</a></li>
+                <li><a href="#integer">integer</a></li>
+                <li><a href="#string">string</a></li>
+                <li><a href="#words">words</a></li>
+            </ul>
+        </div>
+        <div class="col col-sm-12 col-md-4 col-lg-3">
+            <h5>Contact</h5>
+            <ul>
+                <li><a href="#street">street</a></li>
+                <li><a href="#address">address</a></li>
+                <li><a href="#country">country</a></li>
+                <li><a href="#name">name</a></li>
+                <li><a href="#firstName">firstName</a></li>
+                <li><a href="#lastName">lastName</a></li>
+                <li><a href="#gender">gender</a></li>
+                <li><a href="#phone">phone</a></li>
+            </ul>
+        </div>
+        <div class="col col-sm-12 col-md-4 col-lg-3">
+            <h5>Internet</h5>
+            <ul>
+                <li><a href="#domain">domain</a></li>
+                <li><a href="#ipv4">ipv4</a></li>
+                <li><a href="#ipv6">ipv6</a></li>
+                <li><a href="#email">email</a></li>
+                <li><a href="#tag">tag</a></li>
+                <li><a href="#url">url</a></li>
+                <li><a href="#identicon">identicon</a></li>
+                <li><a href="#image">image</a></li>
+            </ul>
+        </div>
+        <div class="col col-sm-12 col-md-4 col-lg-3">
+            <h5>Others</h5>
+            <ul>
+                <li><a href="#color">color</a></li>
+                <li><a href="#date">date</a></li>
+                <li><a href="#dateIn">dateIn</a></li>
+                <li><a href="#hash">hash</a></li>
+                <li><a href="#md5">md5</a></li>
+                <li><a href="#serial">serial</a></li>
+                <li><a href="#uuid">uuid</a></li>
+            </ul>
+        </div>
+        <br><br>
+        <table class="table table-bordered table-striped table-hover apis">
+            <thead>
+                <tr class="active">
+                    <td width="30%">API</td>
+                    <td width="30%">Description</td>
+                    <td width="40%">Example</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="address">
+                    <td><code>address()</code></td>
+                    <td>Return a random address in US mailing address format</td>
+                    <td>
+<pre><code class="javascript">//473 Bunny Street, Bluds, United States 384912
+let address = benthos.address();</code></pre>
+                    </td>
+                </tr>
+                <tr id="boolean">
+                    <td><code>boolean()</code></td>
+                    <td>Return a boolean value, TRUE or FALSE</td>
+                    <td>
+<pre><code class="javascript">let val = benthos.boolean();</code></pre>
+                    </td>
+                </tr>
+                <tr id="color">
+                    <td><code>color([format:string])</code></td>
+                    <td>Return random color for given format, default in hex format</td>
+                    <td>
+<pre><code class="javascript">import { color } from 'benthos';
+
+// #e3d1f3
+let hexColor = color();
+
+// #d9c341
+let hexColor2 = color('hex');
+
+// rgb(231, 103, 43)
+let rgbColor = color('rgb');
+
+// hsl(30%, 40%, 80%)
+let hslColor = color('hsl'); </code></pre>
+                    </td>
+                </tr>
+                <tr id="country">
+                    <td><code>country([isCode:bool])</code></td>
+                    <td>Return a country name or country code</td>
+                    <td>
+<pre><code class="javascript">// Brazil
+let country = benthos.country();
+
+// BR
+let country = benthos.country(true);</code></pre>
+                    </td>
+                </tr>
+                <tr id="date">
+                    <td><code>date([after:Date, before:Date])</code></td>
+                    <td>
+                        Return a random date object which greater than &lt;after&gt; date and less than &lt;before&gt; date
+                        <br><br> The default &lt;after&gt; date is <code>new Date(1970, 1, 1)</code>
+                        <br><br> The default &lt;before&gt; date is <code>new Date(Date.now())</code>
+                    </td>
+                    <td>
+<pre><code class="javascript">let after = new Date(2000, 1, 1);
+let before = new Date(2010, 1, 1);
+
+// Wed Nov 23 2004 10:17:06 GMT-0500
+let date = benthos.date(after, before);</code></pre>
+                    </td>
+                </tr>
+                <tr id="dateIn">
+                    <td><code>dateIn([range:string])</code></td>
+                    <td>Return a random date object within given range, the default &lt;range&gt; is 'week', <br><br> &lt;range&gt; could be 'day', 'week', 'month' or 'year'</td>
+                    <td>
+<pre><code class="javascript">import { dateIn } from 'benthos';
+
+// get a date within current week
+let dateInThisWeek = dateIn('week');
+
+// get a date within current month
+let dateInThisMonth = dateIn('month');</code></pre>
+                    </td>
+                </tr>
+                <tr id="domain">
+                    <td><code>domain()</code></td>
+                    <td>Return a random domain</td>
+                    <td>
+<pre><code class="javascript">// jdixc.org
+let domain = benthos.domain()</code></pre>
+                    </td>
+                </tr>
+                <tr id="email">
+                    <td><code>email([domain:string])</code></td>
+                    <td>Return an email address with given domain, <br><br>Random domain would be used if no domain provided</td>
+                    <td>
+<pre><code class="javascript">// diaocix12@benthos.com
+let email = benthos.email('benthos.com')</code></pre>
+                    </td>
+                </tr>
+                <tr id="firstName">
+                    <td><code>firstName([gender:string])</code></td>
+                    <td>Return a random first name<br><br>If gender provided, only return those first names for the given gender</td>
+                    <td>
+<pre><code class="javascript">// John or Lisa
+let first = benthos.firstName()
+
+// Lisa
+let femaleFirstName = benthos.firstName('female')
+
+// John
+let maleFirstName = benthos.firstName('male')</code></pre>
+                    </td>
+                </tr>
+                <tr id="float">
+                    <td><code>float([precision:int, radix:string|int])</code></td>
+                    <td>Return a float number between 0 and 1 with specified precision <br><br>The default &lt;precision&gt; is 2 and the default &lt;radix&gt; is 10
+                        <br><br> &lt;radix&gt; should be an integer between 1 and 100 (inclusive), and for convenience, it could also be a radix string, like 'hex', 'bin' and 'oct'
+                    </td>
+                    <td>
+<pre><code class="javascript">// 0.12
+let float = benthos.float();
+
+// 0.73215
+let float5 = benthos.float(5)
+
+// 0.bb6e2eb1c432c8
+let floatHex = benthos.float(5, 'hex')
+
+// 0.ndn2tce46b4
+let float32 = benthos.float(5, 32);
+</code></pre>
+                    </td>
+                </tr>
+                <tr id="gender">
+                    <td><code>gender([isNum:bool])</code></td>
+                    <td>Return a gender string <br><br>If &lt;isNum&gt; set to true, the result would be a number, 0 (female) or 1 (male)</td>
+                    <td>
+<pre><code class="javascript">// Male or Female
+let gender = benthos.gender();
+
+// 0 or 1
+let genderCode = benthos.gender(true);
+</code></pre>
+                    </td>
+                </tr>
+                <tr id="hash">
+                    <td><code>hash([content:string])</code></td>
+                    <td>Return the hash for given content <br><br>If no &lt;content&gt; provided, a random string would be used</td>
+                    <td>
+<pre><code class="javascript">// 99162322
+let hash = benthos.hash('Hello');
+</code></pre>
+                    </td>
+                </tr>
+                <tr id="identicon">
+                    <td><code>identicon([hash:string, size:int])</code></td>
+                    <td>Return an <a href="https://en.wikipedia.org/wiki/Identicon" target="_blank">identicon</a> image base64 string for given hash string
+                        by using <a href="https://github.com/stewartlord/identicon.js/tree/master" target="_blank">identicon.js</a>
+                        <br><br>If no &lt;hash&gt; provided, a random hash string would be used
+                        <br><br>The default &lt;size&gt; is 200</td>
+                    <td>
+<pre><code class="javascript">import {hash, identicon} from 'benthos';
+
+let hash = hash('Hello');
+let idt = identicon(hash);
+let image = new Image();
+image.src = idt;
+</code></pre>
+                    </td>
+                </tr>
+                <tr id="image">
+                    <td><code>image([width:int, height:int])</code></td>
+                    <td>Return an random image url provide by <a href="https://unsplash.it/" target="_blank">unsplash.it</a> with given width and height
+                        <br><br>The default &lt;width&gt; and &lt;height&gt; are 500</td>
+                    <td>
+<pre><code class="javascript">// https://unsplash.it/300/400?random&id=dsio9c0dm3
+let imageSrc = benthos.image(300, 400);
+</code></pre>
+                    </td>
+                </tr>
+                <tr id="integer">
+                    <td><code>integer([min:int, max:int, radix:string|int])</code></td>
+                    <td>Return an integer between &lt;min&gt; and &lt;max&gt; with given &lt;radix&gt;
+                        <br><br> The default &lt;min&gt; is 0, the default &lt;max&gt; is 100 and the default &lt;radix&gt; is 10
+                        <br><br> &lt;radix&gt; should be an integer between 1 and 100 (inclusive), and for convenience, it could also be a radix string, like 'hex', 'bin' and 'oct'
+                    </td>
+                    <td>
+<pre><code class="javascript">import {integer} from 'benthos';
+
+// integer between 100 and 1000
+let int1 = integer(100, 1000);
+
+// integer between 0 and 1000
+let int2 = integer(1000);
+
+// integer between 0 and 100 in hexadecimal string
+let int3 = integer('hex');
+
+// integer between 100 and 1000 in hexadecimal string
+let int4 = integer(100, 1000, 16);
+</code></pre>
+                    </td>
+                </tr>
+                <tr id="ipv4">
+                    <td><code>ipv4()</code></td>
+                    <td>Return a random ipv4 address<td>
+<pre><code class="javascript">// 192.158.32.11
+let ip = benthos.ipv4();</code></pre>
+                    </td>
+                </tr>
+                <tr id="ipv6">
+                    <td><code>ipv6()</code></td>
+                    <td>Return a random ipv6 address<td>
+<pre><code class="javascript">// 2001:0db8:0000:0000:0000:ff00:0042:8329
+let ip = benthos.ipv6();</code></pre>
+                    </td>
+                </tr>
+                <tr id="lastName">
+                    <td><code>lastName()</code></td>
+                    <td>Return a random last name<td>
+<pre><code class="javascript">// Freeman
+let last = benthos.lastName()</code></pre>
+                    </td>
+                </tr>
+                <tr id="md5">
+                    <td><code>md5([content:string])</code></td>
+                    <td>Return md5 string for given content <br><br>If no &lt;content&gt; provided, a random string would be used</td>
+                    <td>
+<pre><code class="javascript">// 5d41402abc4b2a76b9719d911017c592
+let md5 = benthos.md5('hello');
+</code></pre>
+                    </td>
+                </tr>
+                <tr id="name">
+                    <td><code>name([gender:string])</code></td>
+                    <td>Return a random name<br><br>If gender provided, only return those first names for the given gender</td>
+                    <td>
+<pre><code class="javascript">// John Freeman or Lisa Freeman
+let name = benthos.name()
+
+// Lisa Freeman
+let femaleName = benthos.name('female')
+
+// John Freeman
+let maleName = benthos.name('male')</code></pre>
+                    </td>
+                </tr>
+                <tr id="phone">
+                    <td><code>phone([format:string])</code></td>
+                    <td>Return a phone number with given format
+                        <br><br> The default format is (***)***-****
+                    </td>
+                    <td>
+<pre><code class="javascript">// (010)010-0101
+let usPhone = benthos.phone()
+
+// +861010101010
+let cnPhone = benthos.phone('+8610********')</code></pre>
+                    </td>
+                </tr>
+                <tr id="serial">
+                    <td><code>serial([format:string])</code></td>
+                    <td>Return a serial number with given format
+                        <br><br> The default format is ***-**-****
+                    </td>
+                    <td>
+<pre><code class="javascript">// 010-01-0101
+let serial = benthos.serial()
+
+// SN1234
+let snSerial = benthos.serial('SN****')</code></pre>
+                    </td>
+                </tr>
+                <tr id="street">
+                    <td><code>street()</code></td>
+                    <td>Return a random street adress</td>
+                    <td>
+<pre><code class="javascript">// 312 Hill Street
+let street = benthos.street()</code></pre>
+                    </td>
+                </tr>
+                <tr id="string">
+                    <td><code>string([length:int, regex:RegExp|string])</code></td>
+                    <td>Return a random string with given length, and each character would be matched given regex
+                        <br><br> The default &lt;length&gt; is 10, and the default &lt;regex&gt; is /[a-zA-Z0-9]/g
+                        <br><br> &lt;regex&gt; could be a RegExp object or a RegExp liked string
+                    </td>
+                    <td>
+<pre><code class="javascript">// diAXo9s0dI
+let s1 = benthos.string();
+
+// 33df4Q
+let s2 = benthos.string(6);
+
+// 381934
+let s3 = benthos.string(6, '[0-9]')</code></pre>
+                    </td>
+                </tr>
+                <tr id="tag">
+                    <td><code>tag([symbol:string])</code></td>
+                    <td>Return a social tag start with given symbol
+                        <br><br> the default &lt;symbol&gt; is #
+                    </td>
+                    <td>
+<pre><code class="javascript">// #bibendum
+let tag = benthos.tag();
+
+// @bibendum
+let at = benthos.tag('@');</code></pre>
+                    </td>
+                </tr>
+                <tr id="url">
+                    <td><code>url([options:object])</code></td>
+                    <td>Return a random url with given options
+                        <br><br> the &lt;options&gt; could contain following properties:
+                        <br><br> <b>host</b>: define the hostname, a random domain would be used if this property not provided
+                        <br> <b>protocol</b>: define the protocol, default is 'http'
+                        <br> <b>port</b>: define the port in url, default is null
+                        <br> <b>hash</b>: define the hash in url, default is null
+                        <br> <b>path</b>: define the pathname in url, default is null
+                        <br> <b>query</b>: an object contains all queries in url, default is null
+                    </td>
+                    <td>
+<pre><code class="javascript">// http://doicidmd.info
+let url = benthos.url();
+
+// https://benthos.com:8080/docs
+let url = benthos.url({
+    host: 'benthos.com',
+    protocol: 'https',
+    port: 8080,
+    path: 'docs'
+});</code></pre>
+                    </td>
+                </tr>
+                <tr id="uuid">
+                    <td><code>uuid()</code></td>
+                    <td>Return a RFC v4 uuid</td>
+                    <td>
+<pre><code class="javascript">// 174d7f63-a6c2-4947-b41a-ebd5dbf66d11
+let id = benthos.uuid();</code></pre>
+                    </td>
+                </tr>
+                <tr id="words">
+                    <td><code>words([count:int])</code></td>
+                    <td>Return dummy text for given counts
+                        <br><br> The default &lt;count&gt; is 10
+                    </td>
+                    <td>
+<pre><code class="javascript">// lorem ipsum ut dictum vel
+let text = benthos.words(5);</code></pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a style="position: fixed;" href="https://github.com/MarkoCen/Benthos" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+</body>
+</html>
