@@ -1,7 +1,7 @@
 {
   "name": "benthos",
   "version": "0.2.0",
-  "description": "ES2015 test data generator",
+  "description": "ES2015 rich test data generator",
   "main": "build/benthos.js",
   "dependencies": {
     "identicon.js": "^1.3.0",
