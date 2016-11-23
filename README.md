@@ -26,9 +26,9 @@ const email = email();
 
 ### Generate simple data
 ```javascript
-import { fullName, email, url } from 'benthos';
+import { name, email, url } from 'benthos';
 
-let name = fullName(); // Harry Potter
+let name = name(); // Harry Potter
 let email = email('google.com'); // djeifl@google.com
 let url = url({ host: 'markocen.com', path: 'blog' }) // http://markocen.com/blog
 ```
@@ -38,7 +38,7 @@ let url = url({ host: 'markocen.com', path: 'blog' }) // http://markocen.com/blo
 import { compile } from 'benthos';
 
 // bio = 'Hello, my name is Marko Cen, I'm from China'
-let bio = compile('Hello, my name is {{ fullName }}, I\'m from {{ country }}');
+let bio = compile('Hello, my name is {{ name }}, I\'m from {{ country }}');
 ```
 
 ### Generate data from schema
@@ -46,7 +46,7 @@ let bio = compile('Hello, my name is {{ fullName }}, I\'m from {{ country }}');
 import { schema } from 'benthos';
 
 const ProfileSchema = schema({
-    name: '{{fullName}}',
+    name: '{{name}}',
     age: '{{getAge}}',
     gender: '{{gender(false)}}'
 })
